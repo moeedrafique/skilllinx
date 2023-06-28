@@ -1,0 +1,886 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Eduport - LMS, Education and Course Theme</title>
+
+</head>
+
+<body>
+
+{% block content %}
+{% include 'header.html' %}
+
+
+<!-- =======================
+Main Banner START -->
+<section class="pt-0 pb-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Card item START -->
+				<div class="card overflow-hidden h-400px h-xl-600px rounded-3" style="background-image:url(assets/catimgx/Management-and-Leadership.jpg); background-position: center left; background-size: cover;">
+					<!-- Background dark overlay -->
+					<div class="bg-overlay bg-dark opacity-6"></div>
+
+					<!-- Card image overlay -->
+					<div class="card-img-overlay d-flex align-items-start flex-column">
+						<!-- Card overlay Top -->
+						<div class="w-100 mb-auto d-flex justify-content-end">
+
+						</div>
+						<!-- Card overlay bottom -->
+						<div class="w-100 mt-auto">
+							<div class="row p-0 p-sm-3">
+								<div class="col-11 col-lg-7">
+									<!-- Title -->
+									<h1 class="text-white">{{category}} Courses  </h1>
+									<p class="text-white mb-0">BMC Training provides Management and Leadership Courses .</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Card item END -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+<section class="pb-0 pt-0 ">
+<div class="container">
+
+    <!-- Filter bar START -->
+    <form method="get" action="find.php" class="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative">
+        <div class="row g-3">
+
+
+
+
+            <!-- Input -->
+            <div class="col-xl-12">
+                <input class="form-control me-1" name="find" type="search" placeholder="Serach by course title or course code">
+            </div>
+
+            <!-- Select item -->
+            <div class="col-xl-12">
+                <div class="row g-3">
+
+
+
+
+                    <!-- Select items -->
+                    <div class="col-sm-6 col-xl-2 col-md-3 pb-2 pb-md-0">
+                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select class="form-select form-select-sm js-choice sorter-false choices__input" aria-label=".form-select-sm example" name="cat" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Categories</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Categories</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Categories" placeholder=""><div class="choices__list" role="listbox"><div id="choices--cat-g8-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Categories</div><div id="choices--cat-g8-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="1" data-select-text="Press to select" data-choice-selectable="">Management and Leadership</div><div id="choices--cat-g8-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="2" data-select-text="Press to select" data-choice-selectable="">Finance , Accounting and Budgeting</div><div id="choices--cat-g8-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4" data-value="3" data-select-text="Press to select" data-choice-selectable="">Human Resource Management</div><div id="choices--cat-g8-item-choice-5" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="5" data-value="4" data-select-text="Press to select" data-choice-selectable="">Project , Procurement and Contracts</div><div id="choices--cat-g8-item-choice-6" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="6" data-value="5" data-select-text="Press to select" data-choice-selectable="">Secretarial and Administration</div><div id="choices--cat-g8-item-choice-7" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="7" data-value="6" data-select-text="Press to select" data-choice-selectable="">PR , Customer Services , Sales and Marketing</div><div id="choices--cat-g8-item-choice-8" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="8" data-value="7" data-select-text="Press to select" data-choice-selectable="">Quality and Productivity</div><div id="choices--cat-g8-item-choice-9" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="9" data-value="8" data-select-text="Press to select" data-choice-selectable="">Maintenance Engineering Training</div><div id="choices--cat-g8-item-choice-10" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="10" data-value="9" data-select-text="Press to select" data-choice-selectable="">Oil and Gas Training</div><div id="choices--cat-g8-item-choice-11" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="11" data-value="11" data-select-text="Press to select" data-choice-selectable="">Construction and Civil Engineering Training</div><div id="choices--cat-g8-item-choice-12" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="12" data-value="12" data-select-text="Press to select" data-choice-selectable="">Facilities Management Training</div><div id="choices--cat-g8-item-choice-13" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="13" data-value="13" data-select-text="Press to select" data-choice-selectable="">Safety Training</div><div id="choices--cat-g8-item-choice-14" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="14" data-value="15" data-select-text="Press to select" data-choice-selectable="">Electrical and Power Engineering Training</div></div></div></div>
+                    </div>
+
+
+                    <!-- Select items -->
+                    <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
+                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select class="form-select form-select-sm js-choice choices__input" aria-label=".form-select-sm example" name="city" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Cities</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Cities</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Cities" placeholder=""><div class="choices__list" role="listbox"><div id="choices--city-0y-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Cities</div><div id="choices--city-0y-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="1" data-select-text="Press to select" data-choice-selectable="">London</div><div id="choices--city-0y-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="2" data-select-text="Press to select" data-choice-selectable="">Dubai</div><div id="choices--city-0y-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4" data-value="3" data-select-text="Press to select" data-choice-selectable="">Kuala Lumpur</div><div id="choices--city-0y-item-choice-5" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="5" data-value="4" data-select-text="Press to select" data-choice-selectable="">Istanbul</div><div id="choices--city-0y-item-choice-6" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="6" data-value="5" data-select-text="Press to select" data-choice-selectable="">Paris</div><div id="choices--city-0y-item-choice-7" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="7" data-value="6" data-select-text="Press to select" data-choice-selectable="">Bali</div><div id="choices--city-0y-item-choice-8" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="8" data-value="8" data-select-text="Press to select" data-choice-selectable="">Rome</div><div id="choices--city-0y-item-choice-9" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="9" data-value="9" data-select-text="Press to select" data-choice-selectable="">Madrid</div><div id="choices--city-0y-item-choice-10" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="10" data-value="10" data-select-text="Press to select" data-choice-selectable="">Munich</div><div id="choices--city-0y-item-choice-11" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="11" data-value="11" data-select-text="Press to select" data-choice-selectable="">Barcelona</div><div id="choices--city-0y-item-choice-12" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="12" data-value="12" data-select-text="Press to select" data-choice-selectable="">Singapore</div><div id="choices--city-0y-item-choice-13" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="13" data-value="13" data-select-text="Press to select" data-choice-selectable="">Berlin</div><div id="choices--city-0y-item-choice-14" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="14" data-value="14" data-select-text="Press to select" data-choice-selectable="">Hong Kong</div><div id="choices--city-0y-item-choice-15" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="15" data-value="15" data-select-text="Press to select" data-choice-selectable="">Zurich</div><div id="choices--city-0y-item-choice-16" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="16" data-value="16" data-select-text="Press to select" data-choice-selectable="">Washington</div><div id="choices--city-0y-item-choice-17" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="17" data-value="17" data-select-text="Press to select" data-choice-selectable="">New York</div><div id="choices--city-0y-item-choice-18" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="18" data-value="21" data-select-text="Press to select" data-choice-selectable="">Amsterdam</div></div></div></div>
+                    </div>
+
+                    <!-- Search item -->
+                    <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
+                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select class="form-select form-select-sm js-choice choices__input" aria-label=".form-select-sm example" name="month" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Months</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Months</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Months" placeholder=""><div class="choices__list" role="listbox"><div id="choices--month-sz-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Months</div><div id="choices--month-sz-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="Jan" data-select-text="Press to select" data-choice-selectable="">January</div><div id="choices--month-sz-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="Feb" data-select-text="Press to select" data-choice-selectable="">February</div><div id="choices--month-sz-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4" data-value="Mar" data-select-text="Press to select" data-choice-selectable="">March</div><div id="choices--month-sz-item-choice-5" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="5" data-value="Apr" data-select-text="Press to select" data-choice-selectable="">April</div><div id="choices--month-sz-item-choice-6" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="6" data-value="May" data-select-text="Press to select" data-choice-selectable="">May</div><div id="choices--month-sz-item-choice-7" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="7" data-value="Jun" data-select-text="Press to select" data-choice-selectable="">June</div><div id="choices--month-sz-item-choice-8" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="8" data-value="Jul" data-select-text="Press to select" data-choice-selectable="">July</div><div id="choices--month-sz-item-choice-9" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="9" data-value="Aug" data-select-text="Press to select" data-choice-selectable="">August</div><div id="choices--month-sz-item-choice-10" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="10" data-value="Sep" data-select-text="Press to select" data-choice-selectable="">September</div><div id="choices--month-sz-item-choice-11" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="11" data-value="Oct" data-select-text="Press to select" data-choice-selectable="">October</div><div id="choices--month-sz-item-choice-12" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="12" data-value="Nov" data-select-text="Press to select" data-choice-selectable="">November </div><div id="choices--month-sz-item-choice-13" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="13" data-value="Dec" data-select-text="Press to select" data-choice-selectable="">December</div></div></div></div>
+                    </div>
+
+                    <!-- Search item -->
+                    <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
+                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select class="form-select form-select-sm js-choice choices__input" aria-label=".form-select-sm example" name="type" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Durations</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Durations</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Durations" placeholder=""><div class="choices__list" role="listbox"><div id="choices--type-mv-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Durations</div><div id="choices--type-mv-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="One Week" data-select-text="Press to select" data-choice-selectable="">One Week</div><div id="choices--type-mv-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="Two Weeks" data-select-text="Press to select" data-choice-selectable="">Two Weeks</div><div id="choices--type-mv-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4" data-value="Three Weeks" data-select-text="Press to select" data-choice-selectable="">Three Weeks</div><div id="choices--type-mv-item-choice-5" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="5" data-value="Four Weeks" data-select-text="Press to select" data-choice-selectable="">Four Weeks</div></div></div></div>
+                    </div>
+
+        <!-- Search item -->
+                    <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
+                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select name="year" class="form-select form-select-sm js-choice choices__input" aria-label=".form-select-sm example" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Years</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Years</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Years" placeholder=""><div class="choices__list" role="listbox"><div id="choices--year-bo-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Years</div><div id="choices--year-bo-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="2023" data-select-text="Press to select" data-choice-selectable="">2023</div><div id="choices--year-bo-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="2024" data-select-text="Press to select" data-choice-selectable="">2024</div></div></div></div>
+                    </div>
+
+
+
+                      <div class="col-sm-6 col-xl-2 col-md-3 pb-2 pb-md-0">
+                <button type="submit" class="btn btn-primary mb-0 rounded z-index-1 w-100"><i class="fas fa-search"></i></button>
+            </div>
+
+
+
+
+                </div> <!-- Row END -->
+            </div>
+            <!-- Button -->
+
+
+
+
+        </div> <!-- Row END -->
+    </form>
+    <!-- Filter bar END -->
+</div>
+
+</section>
+
+<section class="pt-1">
+	<div class="container" data-sticky-container="">
+		<div class="row g-4">
+			<!-- Main content START -->
+			<div class="col-xl-8">
+
+				<div class="row g-4">
+					<!-- Title START -->
+					<div class="col-12">
+						<!-- Title -->
+						<h2>Management and Leadership Courses</h2>
+						<p>BMC Training provides Management and Leadership Courses</p>
+						<!-- Content -->
+
+					</div>
+					<!-- Title END -->
+
+
+
+					<!-- About course START -->
+					<div class="col-12">
+						<div class="card border">
+							<!-- Card header START -->
+
+							<!-- Card header END -->
+
+							<!-- Card body START -->
+							<div class="card-body">
+                            <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<style>
+
+
+
+.fafa{
+
+
+margin-right: 4px;
+color: #dc3545;
+
+}
+ul.coursed {
+  list-style-type: none;
+  padding: 0;
+  padding-bottom: 0;
+
+
+}
+
+ul.coursed li{
+
+  margin-bottom: 2px;
+  padding-bottom: 9px;
+  padding-top: 9px;
+  font-weight: normal;
+  border-bottom: 1px solid #DBDBDC;
+
+}
+
+ul.sidebar {
+    list-style-type: none;
+    padding: 0;
+    padding-bottom: 0;
+
+}
+
+ul.sidebar li{
+
+    margin-bottom: 2px;
+    padding-bottom: 9px;
+    font-weight: normal;
+
+}
+.crd{
+
+
+margin-right: 15px;
+color: #030E45;
+
+}
+</style>
+
+<style>
+
+
+#myInput {
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+    table-layout: fixed;
+word-wrap: break-word;
+  width: 100%;
+  text-align: left;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #dc3545;
+  color: white;
+}
+</style>
+
+                            <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<center>
+
+<input class="rounded shadow mt-3  bg-body" type="text" id="myInput" onkeyup="myFunction()" placeholder="Type any word here to start filtering courses :) ">
+
+</center>
+
+
+<table class="rounded-3" id="customers">
+  <thead>
+  <tr>
+    <th style="width:10%;">Code</th>
+    <th>Course title</th>
+    <th style="width:25%;">Duration</th>
+  </tr>
+  </thead>
+  <tbody id="myTable">
+
+
+
+  {% for course in courses %}
+  <tr>
+  <td>{{course.course_code}}</td>
+    <td><a href="{% url 'course_detail' course.slug %}" target="_blank">{{course.course_name}}</a></td>
+    <td>One Week</td>
+  </tr>
+  {% endfor %}
+
+
+
+
+
+
+
+  </tbody>
+</table>
+<!--<small>BMC Training advance filter plugin version UKBMC0000xh71/2002-2023</small>-->
+
+
+
+                        </div>
+							<!-- Card body END -->
+						</div>
+					</div>
+					<!-- About course END -->
+
+
+				<!-- FAQs START -->
+                <div class="col-12">
+						<div class="card border rounded-3">
+							<!-- Card header START -->
+							<div class="card-header border-bottom">
+								<h4 class="mb-0">Countries and Cities</h4>
+							</div>
+							<!-- Card header END -->
+
+							<!-- Card body START -->
+							<div class="card-body">
+
+
+                            <section class="position-relative pt-0 pt-lg-5">
+	<div class="container">
+		<div class="row g-4">
+
+
+
+
+			<!-- Card item START -->
+			<div class="col-sm-6 col-lg-4 col-xl-3">
+				<div class="card bg-transparent">
+					<div class="overflow-hidden rounded-3">
+					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-London-uk.jpg" class="card-img" alt="Management and Leadership Courses in London">
+						<!-- Overlay -->
+						<div class="bg-overlay bg-dark opacity-4"></div>
+						<div class="card-img-overlay d-flex align-items-start p-3">
+							<!-- badge -->
+							<a href="courses-in-London-Management-and-Leadership-1-1" class="badge text-bg-danger">London</a>
+						</div>
+					</div>
+
+					<!-- Card body -->
+					<div class="card-body">
+						<!-- Title -->
+						<h6 class="card-title"><a href="courses-in-London-Management-and-Leadership-1-1">Management and Leadership Courses in London</a></h6>
+
+						<!-- Info -->
+
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-sm-6 col-lg-4 col-xl-3">
+				<div class="card bg-transparent">
+					<div class="overflow-hidden rounded-3">
+					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-Dubai-uae.jpg" class="card-img" alt="Management and Leadership Courses in Dubai">
+						<!-- Overlay -->
+						<div class="bg-overlay bg-dark opacity-4"></div>
+						<div class="card-img-overlay d-flex align-items-start p-3">
+							<!-- badge -->
+							<a href="courses-in-Dubai-Management-and-Leadership-1-2" class="badge text-bg-success">Dubai</a>
+						</div>
+					</div>
+
+					<!-- Card body -->
+					<div class="card-body">
+						<!-- Title -->
+						<h6 class="card-title"><a href="courses-in-Dubai-Management-and-Leadership-1-2">Management and Leadership Courses in Dubai</a></h6>
+
+						<!-- Info -->
+
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-sm-6 col-lg-4 col-xl-3">
+				<div class="card bg-transparent">
+					<div class="overflow-hidden rounded-3">
+					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-Kuala-Lumpur-Malaysia.jpg" class="card-img" alt="Management and Leadership Courses in Kuala Lumpur">
+						<!-- Overlay -->
+						<div class="bg-overlay bg-dark opacity-4"></div>
+						<div class="card-img-overlay d-flex align-items-start p-3">
+							<!-- badge -->
+							<a href="courses-in-Kuala-Lumpur-Management-and-Leadership-1-3" class="badge text-bg-purple">Kuala Lumpur</a>
+						</div>
+					</div>
+
+					<!-- Card body -->
+					<div class="card-body">
+						<!-- Title -->
+						<h6 class="card-title"><a href="courses-in-Kuala-Lumpur-Management-and-Leadership-1-3">Management and Leadership Courses in Kuala Lumpur</a></h6>
+
+						<!-- Info -->
+
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-sm-6 col-lg-4 col-xl-3">
+				<div class="card bg-transparent">
+					<div class="overflow-hidden rounded-3">
+					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-Istanbul-Turkey.jpg" class="card-img" alt="Management and Leadership Courses in Istanbul">
+						<!-- Overlay -->
+						<div class="bg-overlay bg-dark opacity-4"></div>
+						<div class="card-img-overlay d-flex align-items-start p-3">
+							<!-- badge -->
+							<a href="courses-in-Istanbul-Management-and-Leadership-1-4" class="badge text-bg-orange">Istanbul</a>
+						</div>
+					</div>
+
+					<!-- Card body -->
+					<div class="card-body">
+						<!-- Title -->
+						<h6 class="card-title"><a href="courses-in-Istanbul-Management-and-Leadership-1-4">Management and Leadership Courses in Istanbul</a></h6>
+
+						<!-- Info -->
+
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-sm-6 col-lg-4 col-xl-3">
+				<div class="card bg-transparent">
+					<div class="overflow-hidden rounded-3">
+					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-Paris-France.jpg" class="card-img" alt="Management and Leadership Courses in Paris">
+						<!-- Overlay -->
+						<div class="bg-overlay bg-dark opacity-4"></div>
+						<div class="card-img-overlay d-flex align-items-start p-3">
+							<!-- badge -->
+							<a href="courses-in-Paris-Management-and-Leadership-1-5" class="badge text-bg-info">Paris</a>
+						</div>
+					</div>
+
+					<!-- Card body -->
+					<div class="card-body">
+						<!-- Title -->
+						<h6 class="card-title"><a href="courses-in-Paris-Management-and-Leadership-1-5">Management and Leadership Courses in Paris</a></h6>
+
+						<!-- Info -->
+
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+
+
+
+
+
+
+
+		</div> <!-- Row end -->
+
+
+
+
+
+
+
+
+
+
+	</div>
+</section>
+
+
+
+
+
+							</div>
+							<!-- Card body END -->
+						</div>
+					</div>
+					<!-- FAQs END -->
+
+
+
+
+
+
+				</div>
+			</div>
+			<!-- Main content END -->
+
+
+
+
+
+<!-- Right sidebar START -->
+<div class="col-lg-4 pt-5 pt-lg-0">
+				<div class="row mb-5 mb-lg-0">
+					<div class="col-md-6 col-lg-12">
+
+
+						<!-- Course info START -->
+						<div class="card card-body shadow p-4 mb-4">
+							<!-- Title -->
+							<h4 class="mb-3">Features</h4>
+							<ul class="list-group list-group-borderless">
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-book-open text-primary"></i>Courses</span>
+									<span>130 Courses</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-clock text-primary"></i>Duration</span>
+									<span>Half Day</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-signal text-primary"></i>Skills</span>
+									<span>All Levels</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-globe text-primary"></i>Language</span>
+									<span>English</span>
+								</li>
+
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-medal text-primary"></i>Attendance Certificate</span>
+									<span>Yes</span>
+								</li>
+							</ul>
+						</div>
+						<!-- Course info END -->
+					</div>
+
+					<div class="col-md-6 col-lg-12">
+						<!-- Recently Viewed START -->
+						<div class="card card-body shadow p-4 mb-4">
+							<!-- Title -->
+							<h4 class="mb-3">Courses Categories</h4>
+
+
+
+
+
+							<!-- Course item START -->
+							<div class="row gx-3">
+								<!-- Image -->
+
+								<!-- Info -->
+								<div class="col-12">
+
+
+
+								<ul class="list-group list-group-borderless mb-1">
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>	 <a href="/training/1/Management-and-Leadership">Management and Leadership</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/2/Finance-,-Accounting-and-Budgeting">Finance , Accounting and Budgeting</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/3/Human-Resource-Management">Human Resource Management</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/4/Project-,-Procurement-and-Contracts">Project , Procurement and Contracts</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/5/Secretarial-and-Administration">Secretarial and Administration</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/6/PR-,-Customer-Services-,-Sales-and-Marketing">PR , Customer Services , Sales and Marketing</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/7/Quality-and-Productivity">Quality and Productivity</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/8/Maintenance-Engineering-Training">Maintenance Engineering Training</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/9/Oil-and-Gas-Training">Oil and Gas Training</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/11/Construction-and-Civil-Engineering-Training">Construction and Civil Engineering Training</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/12/Facilities-Management-Training">Facilities Management Training</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/13/Safety-Training">Safety Training</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+
+
+							<!-- Course item START -->
+							</a><div class="row gx-3"><a>
+								<!-- Image -->
+
+								<!-- Info -->
+								</a><div class="col-12"><a>
+
+
+
+								</a><ul class="list-group list-group-borderless mb-1"><a>
+									</a><li class="list-group-item h6 fw-light d-flex mb-0"><a><i class="fas fa-check-circle text-success me-2"></i>	 </a><a href="/training/15/Electrical-and-Power-Engineering-Training">Electrical and Power Engineering Training</a><a></a></li><a>
+
+
+
+
+
+
+								</a></ul></div><a>
+							</a></div><a>
+							<!-- Course item END -->
+
+
+						</a></div><a>
+						<!-- Recently Viewed END -->
+
+						<!-- Tags START -->
+						</a><div class="card card-body shadow p-4"><a>
+							<h4 class="mb-3">Popular Tags</h4>
+							</a><ul class="list-inline mb-0"><a>
+								</a><li class="list-inline-item"><a> </a><a class="btn btn-outline-light btn-sm" href="find.php?find=management">Management</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="find.php?find=business">business</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="find.php?find=finance">Finance</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="find.php?find=contract">Contract</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="find.php?find=Oil+and+Gas">Oil and Gas</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="training/12/Facilities-Management-Training">Facilities Management</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="training/11/Construction-and-Civil-Engineering-Training">Construction Training</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="training/3/Human-Resource-Management">HR Courses</a> </li>
+							</ul>
+						</div>
+						<!-- Tags END -->
+					</div>
+				</div><!-- Row End -->
+			</div>
+			<!-- Right sidebar END -->
+
+
+
+
+
+
+		</div><!-- Row END -->
+	</div>
+</section>
+
+{% include 'footer.html' %}
+{% endblock %}
+
+
+
+
+</body>
+</html>

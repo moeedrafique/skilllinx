@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Eduport - LMS, Education and Course Theme</title>
+
+</head>
+
+<body>
+
+{% block content %}
+{% include 'header.html' %}
+
+
+<!-- =======================
+Main Banner START -->
+<section class="py-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="bg-light p-4 rounded-3 position-relative overflow-hidden">
+
+					<!-- Svg decoration -->
+					<figure class="position-absolute top-0 end-0 mt-5">
+						<svg width="566.3px" height="353.7px" viewBox="0 0 566.3 353.7">
+							<path stroke="#17a2b8" fill="none" d="M525.1,4c8.1,0.7,14.9,7.2,17.9,14.8c3,7.6,3,16,2.1,24.1c-4.7,44.3-32.1,84.7-69.4,108.9 c-37.4,24.2-83.7,32.8-127.9,27.6c-32.3-3.8-63.5-14.5-95.9-16.6c-21.6-1.4-45.6,2.1-60.1,18.3c-7.7,8.5-11.8,19.6-14.8,30.7 c-7.9,29.5-9,60.8-19.7,89.5c-5.5,14.8-14,29.1-27.1,38c-15.6,10.5-35.6,12-54.2,9.5c-18.6-2.5-36.5-8.6-55-12.1"></path>
+							<path stroke="#F99D2B" fill="none" d="M560.7,0.2c10,18.3,3.7,41.1-5,60.1c-11.8,25.9-28,50.3-50.2,68.2c-29,23.3-66.3,34-103.2,38.6 c-36.9,4.6-74.3,3.8-111.3,7.2c-22.3,2-45.3,5.9-63.5,19c-26.8,19.2-39,55.3-68.3,70.4c-38.2,19.6-89.7-4.9-125.6,18.8 c-22.6,15-30.7,44.2-33.3,71.2"></path>
+						</svg>
+					</figure>
+
+					<div class="row position-relative align-items-center">
+
+						<!-- Content -->
+						<div class="col-md-6 px-md-5">
+							<!-- Title -->
+							<h1 class="mb-3">Business Strategy Essentials in <font color="#F95A37">London</font></h1>
+                            <p class="mb-3">BMC Training provides on <b> Business Strategy Essentials </b> course [Management and Leadership] on <b> 2 Jul 2023</b> in London,UK.</p>
+							<!-- Search -->
+
+						</div>
+
+						<!-- Image -->
+						<div class="col-md-6 text-center">
+							<img src="assets/bmc-training-courses.png" alt="">
+						</div>
+					</div> <!-- Row END -->
+				</div>
+			</div>
+		</div> <!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+<section class="pt-3 pt-xl-5">
+	<div class="container" data-sticky-container="">
+		<div class="row g-4">
+			<!-- Main content START -->
+
+
+		<div class="col-xl-8 col-sm-8">
+
+		 				<div class="card border rounded-2 p-0">
+					<!-- Tabs START -->
+					<div class="card-header border-bottom px-4 py-3">
+						<ul class="nav nav-pills nav-tabs-line py-0" id="course-pills-tab" role="tablist">
+							<!-- Tab item -->
+							<li class="nav-item me-2 me-sm-4" role="presentation">
+								<button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-1" data-bs-toggle="pill" data-bs-target="#course-pills-1" type="button" role="tab" aria-controls="course-pills-1" aria-selected="true">Course Description</button>
+							</li>
+							<!-- Tab item -->
+							<li class="nav-item me-2 me-sm-4" role="presentation">
+								<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill" data-bs-target="#course-pills-2" type="button" role="tab" aria-controls="course-pills-2" aria-selected="false" tabindex="-1">FAQs</button>
+							</li>
+
+						</ul>
+					</div>
+					<!-- Tabs END -->
+
+					<!-- Tab contents START -->
+					<div class="card-body p-4">
+						<div class="tab-content pt-2" id="course-pills-tabContent">
+							<!-- Content START -->
+							<div class="tab-pane fade active show" id="course-pills-1" role="tabpanel" aria-labelledby="course-pills-tab-1">
+								<!-- Course detail START -->
+								<h5 class="mb-3">Course Description</h5>
+								<!-- Course detail END -->
+								<div class="text-dark lh-lg">
+									{{ courses.course.details|safe }}
+								</div>
+							</div>
+							<!-- Content END -->
+
+							<!-- Content START -->
+							<div class="tab-pane fade" id="course-pills-2" role="tabpanel" aria-labelledby="course-pills-tab-2">
+								<!-- Course accordion START -->
+								<div class="text-dark">
+							<div>
+									<h6>Where will the course be held?</h6>
+									<p class="mb-0 " style="text-align: justify; text-justify: inter-word;">The course will be held in Paddington. The exact address and directions will be provided to all enrolled participants prior to the start of the course.</p>
+								</div>
+					<div class="mt-4">
+									<h6>What topics will be covered in the course?</h6>
+									<p class="mb-0 text-justify" style="text-align: justify; text-justify: inter-word;">The course will cover a range of topics related to the subject matter, including but not limited to the topics of Business Strategy Essentials outlines. By the end of the course, you'll have a solid understanding of the key concepts and techniques in the field, and be able to apply them to real-world situations. Detailed course outlines and learning objectives will be provided to all enrolled students prior to the start of the course.</p>
+								</div>
+								<!-- FAQ item -->
+								<div class="mt-4">
+									<h6>What is the schedule for the course?</h6>
+									<p class="mb-0" style="text-align: justify; text-justify: inter-word;">The course is expected to run for 3 hours from 2  Jul  2023 To 6  Jul  2023 . The exact schedule and timing will be confirmed and communicated to all enrolled students via email at least 2 days prior to the course start date.</p>
+
+								</div>
+
+								<!-- FAQ item -->
+								<div class="mt-4">
+									<h6>What do I need to bring to the course?</h6>
+									<p class="mb-0" style="text-align: justify; text-justify: inter-word;">All you need to bring is yourself, a notepad or laptop for taking notes, and a willingness to learn! We'll provide pens, paper, and any required textbooks or handouts.</p>
+								</div>
+
+								<div class="mt-4">
+									<h6>What is the instructor's background and experience?
+</h6>
+									<p class="mb-0" style="text-align: justify; text-justify: inter-word;">Our instructors are seasoned industry professionals with over 10 years of experience in the field. They hold a master's degree in the subject matter and have a proven track record of success working with trainees of all levels. You'll have plenty of opportunities to ask questions and get feedback throughout the course.</p>
+								</div>
+
+								<!-- FAQ item -->
+								<div class="mt-4">
+									<h6>What are the T&amp;C for this course?</h6>
+									<p class="mb-0" style="text-align: justify; text-justify: inter-word;">Please visit our <a href="https://www.bmc.net/terms"> Terms and Conditions</a> page</p>
+									</div>
+
+								<!-- FAQ item -->
+								<div class="mt-4 ">
+									<h6>What kind of certificate will I receive upon completion of the course?</h6>
+			<p class="mb-0" style="text-align: justify; text-justify: inter-word;">Upon completion of the course, you will receive an attendance certificate indicating that you have completed the course. This certificate is not accredited or recognised by any particular institution or organisation, but it can be used to demonstrate your commitment to continuing education and professional development. </p>
+								</div>
+
+								<!-- FAQ item -->
+								</div>
+							</div>
+							<!-- Content END -->
+
+
+
+
+						</div>
+					</div>
+					<!-- Tab contents END -->
+				</div>
+			</div>
+			<!-- Main content END -->
+
+
+
+
+
+			<!-- Right sidebar START -->
+			<div class="col-xl-4 col-sm-4 col-md-4 order-sm-1 order-first ">
+				<div data-sticky="" data-margin-top="80" data-sticky-for="768">
+					<div class="row g-4">
+						<div class="col-md-12 col-xl-12">
+							<!-- Course info START -->
+							<div class="card card-body border p-4">
+								<!-- Price and share button -->
+
+                                <h5 class="mb-3">Course Details</h5>
+								<ul class="list-group list-group-borderless border-0">
+									<li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-book-open text-primary"></i>Code</span>
+										<span class="text-dark">MNG101</span>
+									</li>
+									<li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-city text-primary"></i>City</span>
+										<span class="text-dark">London</span>
+									</li>
+										<li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-map-marker text-primary"></i>Location</span>
+										<span class="text-dark ">Paddington</span>
+									</li>
+									<li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa fa-calendar text-primary"></i>Start Date</span>
+										<span class="text-dark">2  Jul  2023</span>
+									</li>
+                                    <li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-flag-checkered text-primary"></i>End Date</span>
+										<span class="text-dark"> 6  Jul  2023</span>
+									</li>
+
+
+									<li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-signal text-primary"></i>Availability</span>
+										<span class="text-success fw-bold">Confirmed</span>
+									</li>
+									<li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-globe text-primary"></i>Language</span>
+										<span class="text-dark">English</span>
+									</li>
+
+									<li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-medal text-primary"></i>Certificate</span>
+										<span class="text-dark">Yes</span>
+									</li>
+
+                                    <li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="bi bi-currency-pound text-primary"></i>Fees</span>
+										<span class="text-dark">4700 GBP   </span>
+									</li>
+
+										<li class="list-group-item px-0 d-flex justify-content-between">
+										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-mobile text-primary"></i>Whatsapp</span>
+										<span class="text-dark">00447493377144</span>
+									</li>
+								</ul>
+<hr>
+								<!-- Buttons -->
+								<div class="mt-1 d-grid">
+
+
+
+                                <a href="https://www.bmc.uk.com/requests/register.php?id=25&amp;code=MNG101&amp;course=Business-Strategy-Essentials&amp;city=London" rel="nofollow" target="_blank" class="btn btn-info">Registration Request</a>
+
+
+									<a href="bmc-sec-data/training-outlines/cover-downloading.php?id=25&amp;code=MNG101&amp;city=London" class="btn btn-warning">PDF File</a>
+                                    <a href="https://www.bmc.net/Business-Strategy-Essentials" class="btn btn-danger">Other Dates</a>
+								</div>
+								<!-- Divider -->
+
+
+								<!-- Title -->
+
+								<!-- Divider -->
+
+
+								<!-- Instructor info -->
+
+
+
+							</div>
+							<!-- Course info END -->
+						</div>
+
+						<!-- Tags START -->
+						<div class="col-md-6 col-xl-12">
+
+						</div>
+						<!-- Tags END -->
+					</div><!-- Row End -->
+				</div>
+			</div>
+			<!-- Right sidebar END -->
+
+		</div><!-- Row END -->
+	</div>
+</section>
+
+{% include 'footer.html' %}
+{% endblock %}
+
+
+
+
+</body>
+</html>

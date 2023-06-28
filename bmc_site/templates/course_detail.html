@@ -1,0 +1,620 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Eduport - LMS, Education and Course Theme</title>
+
+</head>
+
+<body>
+
+{% block content %}
+{% include 'header.html' %}
+
+
+<!-- =======================
+Main Banner START -->
+<section class="pt-0 pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Card item START -->
+                <div class="card overflow-hidden h-400px h-xl-600px rounded-3"
+                     style="background-image:url(assets/catimgx/Management-and-Leadership.jpg); background-position: center left; background-size: cover;">
+                    <!-- Background dark overlay -->
+                    <div class="bg-overlay bg-dark opacity-6"></div>
+
+                    <!-- Card image overlay -->
+                    <div class="card-img-overlay d-flex align-items-start flex-column">
+                        <!-- Card overlay Top -->
+                        <div class="w-100 mb-auto d-flex justify-content-end">
+                        </div>
+                        <!-- Card overlay bottom -->
+                        <div class="w-100 mt-auto">
+                            <div class="row p-0 p-sm-3">
+                                <div class="col-11 col-lg-7">
+                                    <style>
+      @media (max-width: 767px) {
+        .hidden-mobile {
+          display: none;
+        }
+      }
+                                    </style>
+                                    <!-- Title -->
+                                    <h1 class="text-white">{{courses.course_name}} </h1>
+                                    <p class="text-white hidden-mobile">BMC Training provides {{courses.course_name}} in
+                                        {{courses.category}}. There are 43 training sessions in different cities.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card item END -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =======================
+Main Banner END -->
+<section class="pt-2 mt-0">
+    <div class="container">
+        <!-- Title -->
+
+
+        <div class="row g-4">
+
+
+            <h2 class="mb-0 mt-5">{{courses.course_name}} Training Schedule </h2>
+
+
+            <style>
+					   #customers {
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		border-collapse: collapse;
+		  table-layout: fixed;
+	  word-wrap: break-word;
+		width: 100%;
+		text-align: left;
+		font-size: 15px;
+		border: 1px solid #ddd;
+	  }
+
+
+
+	  #myCustomSearchBox {
+		background-position: 10px 12px; /* Position the search icon */
+		background-repeat: no-repeat; /* Do not repeat the icon image */
+		width: 100%; /* Full-width */
+		font-size: 16px; /* Increase font-size */
+		padding: 12px 20px 12px 40px; /* Add some padding */
+		border: 1px solid #ddd; /* Add a grey border */
+		margin-bottom: 12px; /* Add some space below the input */
+	  }
+
+
+	  #xcustomers td, #xcustomers th {
+		border: 1px solid #ddd;
+
+		font-size: 14px;
+	  }
+
+	  #xcustomers th {
+		padding-top: 12px;
+		padding-bottom: 12px;
+		text-align: left;
+		background-color: #1f386a;
+		color: white;
+		border: 1px solid #ddd;
+	  }
+
+            </style>
+
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">Type a city name </span>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                       aria-label="Search for courses">
+            </div>
+
+
+            <div id="xcustomers_wrapper" class="dataTables_wrapper no-footer">
+                 <table id="basic-btn" class="table table-striped table-bordered nowrap">
+                                                                <thead>
+                                                                    <tr>
+                         <th class="sorting" tabindex="0" aria-controls="xcustomers" rowspan="1" colspan="1"
+                            style="width: 436px;" aria-label="Venue: activate to sort column ascending">Venue
+                        </th>
+                        <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 252px;"
+                            aria-label="Start Date">Start Date
+                        </th>
+                        <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 252px;"
+                            aria-label="End Date">End Date
+                        </th>
+                        <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 180px;" aria-label="Details">
+                            Details
+                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                    {% for i in offer %}
+                    <tr class="odd">
+
+                        <td class="text-dark dtr-control" tabindex="0">{{ i.city }}</td>
+                        <td class="text-dark">{{ i.start_date }}</td>
+                        <td class="text-dark">{{ i.end_date }}</td>
+                        <td>
+                            <center>
+                              <span class="badge rounded-pill bg-danger">
+                                  <a href="{% url 'course_offer' i.course.category.slug i.id i.course.slug %}" style="color:white;text-decoration: none;">Details</a>
+                              </span>
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+                    {% endfor %}
+                                                        </tbody>
+
+                                                            </table>
+                <table id="basic-btn"
+                       class="table table-bordered border-secondary nowrap table-hover table-striped dataTable no-footer dtr-inline"
+                       cellpadding="0" border="0" align="center" cellspacing="0" style="width: 100%;"
+                       aria-describedby="xcustomers_info">
+
+                    <thead>
+                    <tr class="table-warning table-bordered border-secondary ">
+                        <th class="sorting" tabindex="0" aria-controls="xcustomers" rowspan="1" colspan="1"
+                            style="width: 436px;" aria-label="Venue: activate to sort column ascending">Venue
+                        </th>
+                        <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 252px;"
+                            aria-label="Start Date">Start Date
+                        </th>
+                        <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 252px;"
+                            aria-label="End Date">End Date
+                        </th>
+                        <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 180px;" aria-label="Details">
+                            Details
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for i in offer %}
+                    <tr class="odd">
+
+                        <td class="text-dark dtr-control" tabindex="0">{{ i.city }}</td>
+                        <td class="text-dark">{{ i.start_date }}</td>
+                        <td class="text-dark">{{ i.end_date }}</td>
+                        <td>
+                            <center>
+                              <span class="badge rounded-pill bg-danger">
+                                  <a href="{% url 'course_offer' i.course.category.slug i.id i.course.slug %}" style="color:white;text-decoration: none;">Details</a>
+                              </span>
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+                    {% endfor %}
+                    <tr class="even">
+
+                        <td class="text-dark dtr-control" tabindex="0">Dubai , UAE
+
+
+                        </td>
+                        <td class="text-dark">9 - 7 - 2023</td>
+                        <td class="text-dark">13 - 7 - 2023</td>
+                        <td>
+                            <center>
+
+	  <span class="badge rounded-pill bg-danger">
+	      <a href="Management-and-Leadership/26/MNG101/Business-Strategy-Essentials/Dubai"
+             style="color:white;text-decoration: none;">Details</a></span>
+
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+                    <tr class="odd">
+
+                        <td class="text-dark dtr-control" tabindex="0">Paris , France
+
+
+                        </td>
+                        <td class="text-dark">9 - 7 - 2023</td>
+                        <td class="text-dark">13 - 7 - 2023</td>
+                        <td>
+                            <center>
+
+	  <span class="badge rounded-pill bg-danger">
+	      <a href="Management-and-Leadership/26/MNG101/Business-Strategy-Essentials/Paris"
+             style="color:white;text-decoration: none;">Details</a></span>
+
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+                    <tr class="even">
+
+                        <td class="text-dark dtr-control" tabindex="0">Dubai , UAE
+
+
+                        </td>
+                        <td class="text-dark">16 - 7 - 2023</td>
+                        <td class="text-dark">20 - 7 - 2023</td>
+                        <td>
+                            <center>
+
+	  <span class="badge rounded-pill bg-danger">
+	      <a href="Management-and-Leadership/27/MNG101/Business-Strategy-Essentials/Dubai"
+             style="color:white;text-decoration: none;">Details</a></span>
+
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+                    <tr class="odd">
+
+                        <td class="text-dark dtr-control" tabindex="0">Paris , France
+
+
+                        </td>
+                        <td class="text-dark">16 - 7 - 2023</td>
+                        <td class="text-dark">20 - 7 - 2023</td>
+                        <td>
+                            <center>
+
+	  <span class="badge rounded-pill bg-danger">
+	      <a href="Management-and-Leadership/27/MNG101/Business-Strategy-Essentials/Paris"
+             style="color:white;text-decoration: none;">Details</a></span>
+
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+                    <tr class="even">
+
+                        <td class="text-dark dtr-control" tabindex="0">Istanbul , Turkey
+
+
+                        </td>
+                        <td class="text-dark">23 - 7 - 2023</td>
+                        <td class="text-dark">27 - 7 - 2023</td>
+                        <td>
+                            <center>
+
+	  <span class="badge rounded-pill bg-danger">
+	      <a href="Management-and-Leadership/28/MNG101/Business-Strategy-Essentials/Istanbul"
+             style="color:white;text-decoration: none;">Details</a></span>
+
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+                    <tr class="odd">
+
+                        <td class="text-dark dtr-control" tabindex="0">Dubai , UAE
+
+
+                        </td>
+                        <td class="text-dark">23 - 7 - 2023</td>
+                        <td class="text-dark">27 - 7 - 2023</td>
+                        <td>
+                            <center>
+
+	  <span class="badge rounded-pill bg-danger">
+	      <a href="Management-and-Leadership/28/MNG101/Business-Strategy-Essentials/Dubai"
+             style="color:white;text-decoration: none;">Details</a></span>
+
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+                    <tr class="even">
+
+                        <td class="text-dark dtr-control" tabindex="0">Paris , France
+
+
+                        </td>
+                        <td class="text-dark">23 - 7 - 2023</td>
+                        <td class="text-dark">27 - 7 - 2023</td>
+                        <td>
+                            <center>
+
+	  <span class="badge rounded-pill bg-danger">
+	      <a href="Management-and-Leadership/28/MNG101/Business-Strategy-Essentials/Paris"
+             style="color:white;text-decoration: none;">Details</a></span>
+
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+                    <tr class="odd">
+
+                        <td class="text-dark dtr-control" tabindex="0">Istanbul , Turkey
+
+
+                        </td>
+                        <td class="text-dark">6 - 8 - 2023</td>
+                        <td class="text-dark">10 - 8 - 2023</td>
+                        <td>
+                            <center>
+
+	  <span class="badge rounded-pill bg-danger">
+	      <a href="Management-and-Leadership/29/MNG101/Business-Strategy-Essentials/Istanbul"
+             style="color:white;text-decoration: none;">Details</a></span>
+
+                            </center>
+
+
+                        </td>
+
+
+                    </tr>
+
+
+                    </tbody>
+
+                </table>
+                <div class="dataTables_info" id="xcustomers_info" role="status" aria-live="polite">Showing 1 to 43 of 43
+                    entries
+                </div>
+                <div class="dataTables_paginate paging_simple_numbers" id="xcustomers_paginate"><a
+                        class="paginate_button previous disabled" aria-controls="xcustomers" data-dt-idx="0"
+                        tabindex="-1" id="xcustomers_previous">Previous</a><span><a class="paginate_button current"
+                                                                                    aria-controls="xcustomers"
+                                                                                    data-dt-idx="1"
+                                                                                    tabindex="0">1</a></span><a
+                        class="paginate_button next disabled" aria-controls="xcustomers" data-dt-idx="2" tabindex="-1"
+                        id="xcustomers_next">Next</a></div>
+            </div>
+
+
+            <div class="col-12  mt-lg-3">
+                <div class="card border">
+
+                    <div class="card-header border-bottom"><h4 class="mb-0">Course Description</h4></div>
+                    <div class="card-body text-dark">
+                        {{ courses.details|safe }}
+                    </div>
+
+
+                </div>
+            </div>
+
+
+<!--            <script>-->
+<!--var dTable=$('#xcustomers').DataTable( {-->
+<!--	responsive: {-->
+<!--            details: {-->
+<!--                display: $.fn.dataTable.Responsive.display.modal( {-->
+<!--                    header: function ( row ) {-->
+<!--                        var data = row.data();-->
+<!--                        return ' '+data[0];-->
+<!--                    }-->
+<!--                } ),-->
+<!--                renderer: $.fn.dataTable.Responsive.renderer.tableAll( {-->
+<!--                    tableClass: 'table'-->
+<!--                } )-->
+<!--            }-->
+<!--        },-->
+<!-- "pageLength": 70,-->
+<!--"bLengthChange": false,-->
+<!--"dom": "lrtip",-->
+<!--"aaSorting": [],-->
+<!-- "columnDefs": [-->
+<!--{ "orderable": false, "targets": [1,2,3] }-->
+<!--],-->
+
+
+
+<!--	buttons: [-->
+<!--{-->
+<!--text: 'PDF Html5 (Land)',-->
+<!--extend: 'pdfHtml5',-->
+<!--message: 'hellllo',-->
+
+<!--orientation: 'portrait',-->
+<!--exportOptions: {-->
+<!-- columns: ':visible'-->
+<!--},-->
+<!--customize: function (doc) {-->
+<!--doc.pageMargins = [10,10,10,10];-->
+<!--doc.defaultStyle.fontSize = 8;-->
+<!--doc.styles.tableHeader.fontSize = 7;-->
+<!--doc.styles.title.fontSize = 12;-->
+<!--// Remove spaces around page title-->
+<!--doc.content[0].text = doc.content[0].text.trim();-->
+<!--// Create a footer-->
+<!--doc['footer']=(function(page, pages) {-->
+<!--	return {-->
+<!--		columns: [-->
+<!--			'BMC Training and Development-www.bmc.net',-->
+<!--			{-->
+<!--				// This is the right column-->
+<!--				alignment: 'right',-->
+<!--				text: ['page ', { text: page.toString() },  ' of ', { text: pages.toString() }]-->
+<!--			}-->
+<!--		],-->
+<!--		margin: [10, 0]-->
+<!--	}-->
+<!--});-->
+<!--// Styling the table: create style object-->
+<!--var objLayout = {};-->
+<!--// Horizontal line thickness-->
+<!--objLayout['hLineWidth'] = function(i) { return .5; };-->
+<!--// Vertikal line thickness-->
+<!--objLayout['vLineWidth'] = function(i) { return .5; };-->
+<!--// Horizontal line color-->
+<!--objLayout['hLineColor'] = function(i) { return '#aaa'; };-->
+<!--// Vertical line color-->
+<!--objLayout['vLineColor'] = function(i) { return '#aaa'; };-->
+<!--// Left padding of the cell-->
+<!--objLayout['paddingLeft'] = function(i) { return 4; };-->
+<!--// Right padding of the cell-->
+<!--objLayout['paddingRight'] = function(i) { return 4; };-->
+<!--// Inject the object in the document-->
+<!--doc.content[1].layout = objLayout;-->
+<!--}-->
+<!--}-->
+<!--	]-->
+
+
+
+
+<!--} );-->
+
+
+
+<!--$('#basic-url').keyup(function() {-->
+<!--dTable.search($(this).val()).draw(); // this  is for customized searchbox with datatable search feature.-->
+<!--})-->
+
+
+
+<!--            </script>-->
+
+
+            <div class="col-12  mt-lg-3">
+                <div class="card border">
+
+                    <div class="card-header border-bottom"><h4 class="mb-0">Available Cities</h4></div>
+                    <div class="card-body">
+
+
+                        <div class="row g-4">
+
+
+                            <!-- Item -->
+                            <div class="col-sm-6 col-md-4 col-xl-4">
+                                <div class="card card-body bg-blue bg-opacity-10 text-center position-relative btn-transition p-4 h-100  w-100">
+                                    <!-- Image -->
+                                    <div class="icon-l bg-body mx-auto rounded-circle mb-3">
+                                        <img width="50px" height="50px" src="assets/images/element/cities/London.svg"
+                                             alt="">
+                                    </div>
+                                    <!-- Title -->
+                                    <h5 class="mb-2"><a href="ct-Business-Strategy-Essentials-London-MNG101-1"
+                                                        class="stretched-link">Business Strategy Essentials Course in
+                                        <font color="red">London</font></a></h5>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Item -->
+                            <div class="col-sm-6 col-md-4 col-xl-4">
+                                <div class="card card-body bg-blue bg-opacity-10 text-center position-relative btn-transition p-4 h-100  w-100">
+                                    <!-- Image -->
+                                    <div class="icon-l bg-body mx-auto rounded-circle mb-3">
+                                        <img width="50px" height="50px" src="assets/images/element/cities/Dubai.svg"
+                                             alt="">
+                                    </div>
+                                    <!-- Title -->
+                                    <h5 class="mb-2"><a href="ct-Business-Strategy-Essentials-Dubai-MNG101-2"
+                                                        class="stretched-link">Business Strategy Essentials Course in
+                                        <font color="red">Dubai</font></a></h5>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Item -->
+                            <div class="col-sm-6 col-md-4 col-xl-4">
+                                <div class="card card-body bg-blue bg-opacity-10 text-center position-relative btn-transition p-4 h-100  w-100">
+                                    <!-- Image -->
+                                    <div class="icon-l bg-body mx-auto rounded-circle mb-3">
+                                        <img width="50px" height="50px"
+                                             src="assets/images/element/cities/Kuala Lumpur.svg" alt="">
+                                    </div>
+                                    <!-- Title -->
+                                    <h5 class="mb-2"><a href="ct-Business-Strategy-Essentials-Kuala-Lumpur-MNG101-3"
+                                                        class="stretched-link">Business Strategy Essentials Course in
+                                        <font color="red">Kuala Lumpur</font></a></h5>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Item -->
+                            <div class="col-sm-6 col-md-4 col-xl-4">
+                                <div class="card card-body bg-blue bg-opacity-10 text-center position-relative btn-transition p-4 h-100  w-100">
+                                    <!-- Image -->
+                                    <div class="icon-l bg-body mx-auto rounded-circle mb-3">
+                                        <img width="50px" height="50px" src="assets/images/element/cities/Istanbul.svg"
+                                             alt="">
+                                    </div>
+                                    <!-- Title -->
+                                    <h5 class="mb-2"><a href="ct-Business-Strategy-Essentials-Istanbul-MNG101-4"
+                                                        class="stretched-link">Business Strategy Essentials Course in
+                                        <font color="red">Istanbul</font></a></h5>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Item -->
+                            <div class="col-sm-6 col-md-4 col-xl-4">
+                                <div class="card card-body bg-blue bg-opacity-10 text-center position-relative btn-transition p-4 h-100  w-100">
+                                    <!-- Image -->
+                                    <div class="icon-l bg-body mx-auto rounded-circle mb-3">
+                                        <img width="50px" height="50px" src="assets/images/element/cities/Paris.svg"
+                                             alt="">
+                                    </div>
+                                    <!-- Title -->
+                                    <h5 class="mb-2"><a href="ct-Business-Strategy-Essentials-Paris-MNG101-5"
+                                                        class="stretched-link">Business Strategy Essentials Course in
+                                        <font color="red">Paris</font></a></h5>
+
+                                </div>
+                            </div>
+
+
+                        </div>    <!-- G4 -->
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</section>
+
+
+{% include 'footer.html' %}
+{% endblock %}
+
+
+</body>
+</html>

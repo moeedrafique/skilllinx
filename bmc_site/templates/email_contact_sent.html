@@ -1,0 +1,48 @@
+{% extends "account/base.html" %}
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>{% block title %}Message Sent {% endblock%}</title>
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+{% load i18n %}
+
+{% block content %}
+    <p></p>
+    <div data-id="content-container" class="styled-layout__ContentContainer-sc-1omfd8k-3 duZvmS">
+        <div class="Spacer-sc-__sc-1d4woe-0 bJNpjV">
+            <div size="200" class="logo__LogoWrapper-sc-8t9348-0 cEmdFa"><a href="/"
+                                                                            target="_top">                <img src="{% static 'img/logo.gif' %}" alt="Find Pakistan's Top Universities | FindMyUni - Pakistan's 1st AI Based University Finder"/>
+</a>
+            </div>
+        </div>
+        <div class="signup-okta" id="okta-widget"></div>
+        <div id="okta-signup-success">
+            <div data-qa="signup-success-screen" class="signup-success-screen-okta__Wrapper-sc-16pfmp9-0 bAgBAb"><span
+                    font-family="sans"
+                    class="Text-sc-__sc-1h7ebrz-0 signup-success-screen-okta__Text-sc-16pfmp9-1 cbfaGh kwRUDm">{% blocktrans %}Your <strong>message was successfully sent</strong>. We will do our best to get back to you in a timely manner :).{% endblocktrans %}</span>
+            </div>
+        </div>
+        <div class="spinner__Container-sc-15nqelg-0 XutMk okta-widget-placeholder okta-hidden">
+            <div class="spinner__SpinnerCircle-sc-15nqelg-1 gbIRzw"></div>
+        </div>
+    </div>
+    <style>
+        .duZvmS {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            margin-top: 24px;
+        }
+
+        .bAgBAb {
+            max-width: 384px;
+            margin: 0px auto;
+        }
+
+    </style>
+
+{% endblock %}
