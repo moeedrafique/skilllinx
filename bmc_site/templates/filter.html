@@ -1,0 +1,102 @@
+{% load widget_tweaks %}
+<form method="get" action="{% url 'results' %}" class="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative">
+            <div class="row g-3">
+
+
+                <!-- Input -->
+                <div class="col-xl-12">
+                    <input class="form-control me-1" name="search_query" type="search"
+                           placeholder="Serach by course title or course code">
+                </div>
+
+                <!-- Select item -->
+                <div class="col-xl-12">
+                    <div class="row g-3">
+
+
+                        <!-- Select items -->
+                        <div class="col-sm-6 col-xl-2 col-md-3 pb-2 pb-md-0">
+                            {% render_field myFilter.form.category class="form-control choices " data-placeholder="Choose a category" id="mySelect" %}
+
+                        </div>
+
+                        <!-- Select items -->
+                        <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
+                            <select name="city" class="choices">
+                                <option selected value="" disabled >All Cities</option>
+                                {% for i in city %}
+                                <option value="{{i.id}}">{{i}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Search item -->
+                        <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
+                            <select name="month" class="choices">
+                                <option selected value="" disabled >All Months</option>
+                                <option value="">January</option>
+                                <option value="">February</option>
+                                <option value="">March</option>
+                                <option value="">April</option>
+                                <option value="">May</option>
+                                <option value="">June</option>
+                                <option value="">July</option>
+                                <option value="">August</option>
+                                <option value="">September</option>
+                                <option value="">October</option>
+                                <option value="">November</option>
+                                <option value="">December</option>
+                            </select>
+                            <style>
+.choices__list--single .choices__item  {
+    opacity: .5;
+  }
+</style>
+                        </div>
+
+                        <!-- Search item -->
+                        <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
+                            {% render_field myFilter.form.duration class="form-control choices" data-placeholder="All Durations" id="exampleFormControlSelect1" %}
+                        </div>
+
+                        <!-- Search item -->
+                        <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
+                            <select class="choices" name="year">
+                                <option value="" selected disabled >All Years</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+
+
+                        <div class="col-sm-6 col-xl-2 col-md-3 pb-2 pb-md-0">
+                            <button type="submit" class="btn btn-primary mb-0 rounded z-index-1 w-100"><i
+                                    class="fas fa-search"></i></button>
+                        </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Target select dropdowns with the custom class
+  var selectDropdowns = document.querySelectorAll('.choices');
+
+  // Loop through each select dropdown and initialize Choices.js
+  selectDropdowns.forEach(function(selectElement) {
+    var placeholder = selectElement.getAttribute('data-placeholder');
+    var choices = new Choices(selectElement, {
+      placeholder: true,
+      placeholderValue: placeholder,
+      searchPlaceholderValue: 'Search options',
+      // Add more configuration options as needed
+    });
+  });
+});
+</script>
+
+
+                    </div> <!-- Row END -->
+                </div>
+                <!-- Button -->
+
+
+            </div> <!-- Row END -->
+        </form>

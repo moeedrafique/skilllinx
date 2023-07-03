@@ -16,45 +16,35 @@
 <!-- =======================
 Main Banner START -->
 <section class="pt-0 pb-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Card item START -->
-                <div class="card overflow-hidden h-400px h-xl-600px rounded-3"
-                     style="background-image:url({% if courses.category.banner %}{{courses.category.banner.url}}{% endif %}); background-position: center left; background-size: cover;">
-                    <!-- Background dark overlay -->
-                    <div class="bg-overlay bg-dark opacity-6"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Card item START -->
+								<div class="card overflow-hidden h-400px h-xl-600px rounded-3" style="background-image:url(assets/citimgx/training-courses-in-Dubai-uae.jpg); background-position: center left; background-size: cover;">
+					<!-- Background dark overlay -->
+					<div class="bg-overlay bg-dark opacity-6"></div>
 
-                    <!-- Card image overlay -->
-                    <div class="card-img-overlay d-flex align-items-start flex-column">
-                        <!-- Card overlay Top -->
-                        <div class="w-100 mb-auto d-flex justify-content-end">
-                        </div>
-                        <!-- Card overlay bottom -->
-                        <div class="w-100 mt-auto">
-                            <div class="row p-0 p-sm-3">
-                                <div class="col-11 col-lg-7">
-                                    <style>
-      @media (max-width: 767px) {
-        .hidden-mobile {
-          display: none;
-        }
-      }
-                                    </style>
-                                    <!-- Title -->
-                                    <h1 class="text-white">{{courses.course_name}} </h1>
-                                    <p class="text-white hidden-mobile">Skilllinx Training provides {{courses.course_name}} in
-                                        {{courses.category}}. There are 43 training sessions in different cities.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card item END -->
-            </div>
-        </div>
-    </div>
+					<!-- Card image overlay -->
+					<div class="card-img-overlay d-flex align-items-start flex-column">
+						<!-- Card overlay Top -->
+						<div class="w-100 mb-auto d-flex justify-content-end">
+ 						</div>
+						<!-- Card overlay bottom -->
+						<div class="w-100 mt-auto">
+							<div class="row p-0 p-sm-3">
+								<div class="col-11 col-lg-7">
+									<!-- Title -->
+									<h1 class="text-white">Training Courses in {{city}}</h1>
+									<p class="text-white mb-0">Skillinx Training provides Training Courses in {{city}}.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Card item END -->
+			</div>
+		</div>
+	</div>
 </section>
 
 
@@ -68,7 +58,7 @@ Main Banner END -->
         <div class="row g-4">
 
 
-            <h2 class="mb-0 mt-5">{{courses.course_name}} Training Schedule </h2>
+            <h2 class="mb-0 mt-5">Training Courses in {{city}}</h2>
 
 
             <style>
@@ -146,18 +136,14 @@ Main Banner END -->
                                     </thead>
                                     <tbody>
 
-                                    {% for i in offer %}
+                                    {% for i in course_offerings  %}
                                     <tr>
-                                                                    <td>{{ i.city }}</td>
-                                                                    <td>{{ i.start_date }}</td>
-                                                                    <td>{{ i.end_date }}</td>
-                                                                    <td>               <center>
-                              <span class="badge rounded-pill bg-danger">
-                                  <a href="{% url 'course_offer' i.course.category.slug i.id i.course.slug %}" style="color:white;text-decoration: none;">Details</a>
-                              </span>
-                            </center></td>
+                                        <td><a style=" color: black;" target="_blank" href="{% url 'location' i.city.slug i.course.category.slug  %}">{{ i.course.course_name }}</a></td>
+                                        <td>{{ i.city }}</td>
+                                        <td>{{ i.start_date }}</td>
+                                        <td>{{ i.course.duration }}</td>
 
-                                                            </tr>
+                                    </tr>
                                     {% endfor %}
                                     </tbody>
                                 </table>
@@ -202,24 +188,6 @@ $(document).ready( function () {
     $('#xcustomers').DataTable();
 } );
                             </script>
-
-            <div class="col-12  mt-lg-3">
-<div class="card border">
-
-<div class="card-header border-bottom"><h4 class="mb-0">Course Description</h4></div>
-<div class="card-body text-dark">
-    {{courses.details|safe}}
-</div>
-
-
-
-
-
-
-
-
-</div>
-</div>
 
 
     </div>

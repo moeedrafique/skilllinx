@@ -20,7 +20,7 @@ Main Banner START -->
 		<div class="row">
 			<div class="col-12">
 				<!-- Card item START -->
-				<div class="card overflow-hidden h-400px h-xl-600px rounded-3" style="background-image:url(assets/catimgx/Management-and-Leadership.jpg); background-position: center left; background-size: cover;">
+				<div class="card overflow-hidden h-400px h-xl-600px rounded-3" style="background-image:url({% if category.banner %}{{category.banner.url}}{% endif %}); background-position: center left; background-size: cover;">
 					<!-- Background dark overlay -->
 					<div class="bg-overlay bg-dark opacity-6"></div>
 
@@ -36,7 +36,7 @@ Main Banner START -->
 								<div class="col-11 col-lg-7">
 									<!-- Title -->
 									<h1 class="text-white">{{category}} Courses  </h1>
-									<p class="text-white mb-0">BMC Training provides Management and Leadership Courses .</p>
+									<p class="text-white mb-0">Skilllinx Training provides Management and Leadership Courses .</p>
 								</div>
 							</div>
 						</div>
@@ -53,68 +53,7 @@ Main Banner END -->
 <div class="container">
 
     <!-- Filter bar START -->
-    <form method="get" action="find.php" class="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative">
-        <div class="row g-3">
-
-
-
-
-            <!-- Input -->
-            <div class="col-xl-12">
-                <input class="form-control me-1" name="find" type="search" placeholder="Serach by course title or course code">
-            </div>
-
-            <!-- Select item -->
-            <div class="col-xl-12">
-                <div class="row g-3">
-
-
-
-
-                    <!-- Select items -->
-                    <div class="col-sm-6 col-xl-2 col-md-3 pb-2 pb-md-0">
-                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select class="form-select form-select-sm js-choice sorter-false choices__input" aria-label=".form-select-sm example" name="cat" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Categories</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Categories</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Categories" placeholder=""><div class="choices__list" role="listbox"><div id="choices--cat-g8-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Categories</div><div id="choices--cat-g8-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="1" data-select-text="Press to select" data-choice-selectable="">Management and Leadership</div><div id="choices--cat-g8-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="2" data-select-text="Press to select" data-choice-selectable="">Finance , Accounting and Budgeting</div><div id="choices--cat-g8-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4" data-value="3" data-select-text="Press to select" data-choice-selectable="">Human Resource Management</div><div id="choices--cat-g8-item-choice-5" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="5" data-value="4" data-select-text="Press to select" data-choice-selectable="">Project , Procurement and Contracts</div><div id="choices--cat-g8-item-choice-6" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="6" data-value="5" data-select-text="Press to select" data-choice-selectable="">Secretarial and Administration</div><div id="choices--cat-g8-item-choice-7" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="7" data-value="6" data-select-text="Press to select" data-choice-selectable="">PR , Customer Services , Sales and Marketing</div><div id="choices--cat-g8-item-choice-8" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="8" data-value="7" data-select-text="Press to select" data-choice-selectable="">Quality and Productivity</div><div id="choices--cat-g8-item-choice-9" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="9" data-value="8" data-select-text="Press to select" data-choice-selectable="">Maintenance Engineering Training</div><div id="choices--cat-g8-item-choice-10" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="10" data-value="9" data-select-text="Press to select" data-choice-selectable="">Oil and Gas Training</div><div id="choices--cat-g8-item-choice-11" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="11" data-value="11" data-select-text="Press to select" data-choice-selectable="">Construction and Civil Engineering Training</div><div id="choices--cat-g8-item-choice-12" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="12" data-value="12" data-select-text="Press to select" data-choice-selectable="">Facilities Management Training</div><div id="choices--cat-g8-item-choice-13" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="13" data-value="13" data-select-text="Press to select" data-choice-selectable="">Safety Training</div><div id="choices--cat-g8-item-choice-14" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="14" data-value="15" data-select-text="Press to select" data-choice-selectable="">Electrical and Power Engineering Training</div></div></div></div>
-                    </div>
-
-
-                    <!-- Select items -->
-                    <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
-                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select class="form-select form-select-sm js-choice choices__input" aria-label=".form-select-sm example" name="city" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Cities</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Cities</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Cities" placeholder=""><div class="choices__list" role="listbox"><div id="choices--city-0y-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Cities</div><div id="choices--city-0y-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="1" data-select-text="Press to select" data-choice-selectable="">London</div><div id="choices--city-0y-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="2" data-select-text="Press to select" data-choice-selectable="">Dubai</div><div id="choices--city-0y-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4" data-value="3" data-select-text="Press to select" data-choice-selectable="">Kuala Lumpur</div><div id="choices--city-0y-item-choice-5" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="5" data-value="4" data-select-text="Press to select" data-choice-selectable="">Istanbul</div><div id="choices--city-0y-item-choice-6" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="6" data-value="5" data-select-text="Press to select" data-choice-selectable="">Paris</div><div id="choices--city-0y-item-choice-7" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="7" data-value="6" data-select-text="Press to select" data-choice-selectable="">Bali</div><div id="choices--city-0y-item-choice-8" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="8" data-value="8" data-select-text="Press to select" data-choice-selectable="">Rome</div><div id="choices--city-0y-item-choice-9" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="9" data-value="9" data-select-text="Press to select" data-choice-selectable="">Madrid</div><div id="choices--city-0y-item-choice-10" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="10" data-value="10" data-select-text="Press to select" data-choice-selectable="">Munich</div><div id="choices--city-0y-item-choice-11" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="11" data-value="11" data-select-text="Press to select" data-choice-selectable="">Barcelona</div><div id="choices--city-0y-item-choice-12" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="12" data-value="12" data-select-text="Press to select" data-choice-selectable="">Singapore</div><div id="choices--city-0y-item-choice-13" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="13" data-value="13" data-select-text="Press to select" data-choice-selectable="">Berlin</div><div id="choices--city-0y-item-choice-14" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="14" data-value="14" data-select-text="Press to select" data-choice-selectable="">Hong Kong</div><div id="choices--city-0y-item-choice-15" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="15" data-value="15" data-select-text="Press to select" data-choice-selectable="">Zurich</div><div id="choices--city-0y-item-choice-16" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="16" data-value="16" data-select-text="Press to select" data-choice-selectable="">Washington</div><div id="choices--city-0y-item-choice-17" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="17" data-value="17" data-select-text="Press to select" data-choice-selectable="">New York</div><div id="choices--city-0y-item-choice-18" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="18" data-value="21" data-select-text="Press to select" data-choice-selectable="">Amsterdam</div></div></div></div>
-                    </div>
-
-                    <!-- Search item -->
-                    <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
-                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select class="form-select form-select-sm js-choice choices__input" aria-label=".form-select-sm example" name="month" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Months</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Months</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Months" placeholder=""><div class="choices__list" role="listbox"><div id="choices--month-sz-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Months</div><div id="choices--month-sz-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="Jan" data-select-text="Press to select" data-choice-selectable="">January</div><div id="choices--month-sz-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="Feb" data-select-text="Press to select" data-choice-selectable="">February</div><div id="choices--month-sz-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4" data-value="Mar" data-select-text="Press to select" data-choice-selectable="">March</div><div id="choices--month-sz-item-choice-5" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="5" data-value="Apr" data-select-text="Press to select" data-choice-selectable="">April</div><div id="choices--month-sz-item-choice-6" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="6" data-value="May" data-select-text="Press to select" data-choice-selectable="">May</div><div id="choices--month-sz-item-choice-7" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="7" data-value="Jun" data-select-text="Press to select" data-choice-selectable="">June</div><div id="choices--month-sz-item-choice-8" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="8" data-value="Jul" data-select-text="Press to select" data-choice-selectable="">July</div><div id="choices--month-sz-item-choice-9" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="9" data-value="Aug" data-select-text="Press to select" data-choice-selectable="">August</div><div id="choices--month-sz-item-choice-10" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="10" data-value="Sep" data-select-text="Press to select" data-choice-selectable="">September</div><div id="choices--month-sz-item-choice-11" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="11" data-value="Oct" data-select-text="Press to select" data-choice-selectable="">October</div><div id="choices--month-sz-item-choice-12" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="12" data-value="Nov" data-select-text="Press to select" data-choice-selectable="">November </div><div id="choices--month-sz-item-choice-13" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="13" data-value="Dec" data-select-text="Press to select" data-choice-selectable="">December</div></div></div></div>
-                    </div>
-
-                    <!-- Search item -->
-                    <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
-                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select class="form-select form-select-sm js-choice choices__input" aria-label=".form-select-sm example" name="type" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Durations</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Durations</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Durations" placeholder=""><div class="choices__list" role="listbox"><div id="choices--type-mv-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Durations</div><div id="choices--type-mv-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="One Week" data-select-text="Press to select" data-choice-selectable="">One Week</div><div id="choices--type-mv-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="Two Weeks" data-select-text="Press to select" data-choice-selectable="">Two Weeks</div><div id="choices--type-mv-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4" data-value="Three Weeks" data-select-text="Press to select" data-choice-selectable="">Three Weeks</div><div id="choices--type-mv-item-choice-5" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="5" data-value="Four Weeks" data-select-text="Press to select" data-choice-selectable="">Four Weeks</div></div></div></div>
-                    </div>
-
-        <!-- Search item -->
-                    <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
-                        <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select name="year" class="form-select form-select-sm js-choice choices__input" aria-label=".form-select-sm example" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">All Years</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">All Years</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="All Years" placeholder=""><div class="choices__list" role="listbox"><div id="choices--year-bo-item-choice-1" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">All Years</div><div id="choices--year-bo-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="2023" data-select-text="Press to select" data-choice-selectable="">2023</div><div id="choices--year-bo-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="2024" data-select-text="Press to select" data-choice-selectable="">2024</div></div></div></div>
-                    </div>
-
-
-
-                      <div class="col-sm-6 col-xl-2 col-md-3 pb-2 pb-md-0">
-                <button type="submit" class="btn btn-primary mb-0 rounded z-index-1 w-100"><i class="fas fa-search"></i></button>
-            </div>
-
-
-
-
-                </div> <!-- Row END -->
-            </div>
-            <!-- Button -->
-
-
-
-
-        </div> <!-- Row END -->
-    </form>
+    {% include 'filter.html' %}
     <!-- Filter bar END -->
 </div>
 
@@ -131,7 +70,7 @@ Main Banner END -->
 					<div class="col-12">
 						<!-- Title -->
 						<h2>Management and Leadership Courses</h2>
-						<p>BMC Training provides Management and Leadership Courses</p>
+						<p>Skilllinx Training provides Management and Leadership Courses</p>
 						<!-- Content -->
 
 					</div>
@@ -287,7 +226,7 @@ $(document).ready(function(){
 
   </tbody>
 </table>
-<!--<small>BMC Training advance filter plugin version UKBMC0000xh71/2002-2023</small>-->
+<!--<small>Skilllinx Training advance filter plugin version UKSkilllinx0000xh71/2002-2023</small>-->
 
 
 
@@ -319,136 +258,34 @@ $(document).ready(function(){
 
 
 			<!-- Card item START -->
+			{% for i in city %}
 			<div class="col-sm-6 col-lg-4 col-xl-3">
 				<div class="card bg-transparent">
 					<div class="overflow-hidden rounded-3">
-					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-London-uk.jpg" class="card-img" alt="Management and Leadership Courses in London">
+						{% if i.image %}
+						<img style="height: 135px;" src="{{i.image.url}}" class="card-img" alt="Management and Leadership Courses in London">
+						{% endif %}
 						<!-- Overlay -->
 						<div class="bg-overlay bg-dark opacity-4"></div>
 						<div class="card-img-overlay d-flex align-items-start p-3">
 							<!-- badge -->
-							<a href="courses-in-London-Management-and-Leadership-1-1" class="badge text-bg-danger">London</a>
+							<a href="" class="badge text-bg-danger">{{i}}</a>
 						</div>
 					</div>
 
 					<!-- Card body -->
 					<div class="card-body">
 						<!-- Title -->
-						<h6 class="card-title"><a href="courses-in-London-Management-and-Leadership-1-1">Management and Leadership Courses in London</a></h6>
+						<h6 class="card-title"><a href="/courses-in-{{i.slug}}-in-{{category.slug}}/">{{category}} Courses in
+							{{i}}</a></h6>
 
 						<!-- Info -->
 
 					</div>
 				</div>
 			</div>
+			{% endfor %}
 			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card bg-transparent">
-					<div class="overflow-hidden rounded-3">
-					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-Dubai-uae.jpg" class="card-img" alt="Management and Leadership Courses in Dubai">
-						<!-- Overlay -->
-						<div class="bg-overlay bg-dark opacity-4"></div>
-						<div class="card-img-overlay d-flex align-items-start p-3">
-							<!-- badge -->
-							<a href="courses-in-Dubai-Management-and-Leadership-1-2" class="badge text-bg-success">Dubai</a>
-						</div>
-					</div>
-
-					<!-- Card body -->
-					<div class="card-body">
-						<!-- Title -->
-						<h6 class="card-title"><a href="courses-in-Dubai-Management-and-Leadership-1-2">Management and Leadership Courses in Dubai</a></h6>
-
-						<!-- Info -->
-
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card bg-transparent">
-					<div class="overflow-hidden rounded-3">
-					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-Kuala-Lumpur-Malaysia.jpg" class="card-img" alt="Management and Leadership Courses in Kuala Lumpur">
-						<!-- Overlay -->
-						<div class="bg-overlay bg-dark opacity-4"></div>
-						<div class="card-img-overlay d-flex align-items-start p-3">
-							<!-- badge -->
-							<a href="courses-in-Kuala-Lumpur-Management-and-Leadership-1-3" class="badge text-bg-purple">Kuala Lumpur</a>
-						</div>
-					</div>
-
-					<!-- Card body -->
-					<div class="card-body">
-						<!-- Title -->
-						<h6 class="card-title"><a href="courses-in-Kuala-Lumpur-Management-and-Leadership-1-3">Management and Leadership Courses in Kuala Lumpur</a></h6>
-
-						<!-- Info -->
-
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card bg-transparent">
-					<div class="overflow-hidden rounded-3">
-					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-Istanbul-Turkey.jpg" class="card-img" alt="Management and Leadership Courses in Istanbul">
-						<!-- Overlay -->
-						<div class="bg-overlay bg-dark opacity-4"></div>
-						<div class="card-img-overlay d-flex align-items-start p-3">
-							<!-- badge -->
-							<a href="courses-in-Istanbul-Management-and-Leadership-1-4" class="badge text-bg-orange">Istanbul</a>
-						</div>
-					</div>
-
-					<!-- Card body -->
-					<div class="card-body">
-						<!-- Title -->
-						<h6 class="card-title"><a href="courses-in-Istanbul-Management-and-Leadership-1-4">Management and Leadership Courses in Istanbul</a></h6>
-
-						<!-- Info -->
-
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card bg-transparent">
-					<div class="overflow-hidden rounded-3">
-					    						<img style="height: 135px;" src="assets/citimgx/training-courses-in-Paris-France.jpg" class="card-img" alt="Management and Leadership Courses in Paris">
-						<!-- Overlay -->
-						<div class="bg-overlay bg-dark opacity-4"></div>
-						<div class="card-img-overlay d-flex align-items-start p-3">
-							<!-- badge -->
-							<a href="courses-in-Paris-Management-and-Leadership-1-5" class="badge text-bg-info">Paris</a>
-						</div>
-					</div>
-
-					<!-- Card body -->
-					<div class="card-body">
-						<!-- Title -->
-						<h6 class="card-title"><a href="courses-in-Paris-Management-and-Leadership-1-5">Management and Leadership Courses in Paris</a></h6>
-
-						<!-- Info -->
-
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-
-
-
-
-
-
 
 		</div> <!-- Row end -->
 
@@ -500,7 +337,7 @@ $(document).ready(function(){
 							<ul class="list-group list-group-borderless">
 								<li class="list-group-item d-flex justify-content-between align-items-center">
 									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-book-open text-primary"></i>Courses</span>
-									<span>130 Courses</span>
+									<span>{{count}} Courses</span>
 								</li>
 								<li class="list-group-item d-flex justify-content-between align-items-center">
 									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-clock text-primary"></i>Duration</span>

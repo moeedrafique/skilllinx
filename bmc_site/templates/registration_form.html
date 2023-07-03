@@ -1,0 +1,288 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+{% include 'header.html' %}
+<!-- registration_form.html -->
+
+<!-- Latest compiled and minified CSS -->
+<!-- registration_form.html -->
+
+<!-- registration_form.html -->
+
+<style>
+  .form-section {
+    margin-bottom: 30px;
+  }
+
+  .form-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    transition: border-color 0.2s ease-in-out;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: #8fbcbb;
+    box-shadow: 0 0 0 2px rgba(143, 188, 187, 0.2);
+  }
+
+  .form-checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    margin-bottom: 5px;
+  }
+
+  .form-checkbox {
+    margin-right: 5px;
+  }
+
+  .form-submit {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #8fbcbb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .form-submit:hover {
+    background-color: #63939a;
+  }
+  .form-error {
+    color: red;
+    border-color: red;
+  }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<div class="container">
+<form class="form" method="POST" action="">
+  {% csrf_token %}
+
+  <div class="form-section">
+    <h2>Participant Information</h2>
+    <div class="form-group">
+      <label class="form-label" for="{{ form.name.id_for_label }}">Student Name</label>
+      <input class="form-input" type="text" id="{{ form.name.id_for_label }}" name="{{ form.name.html_name }}" required>
+      {% if form.student_name.errors %}
+        <ul class="errorlist">
+          {% for error in form.student_name.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <!-- Add other fields for Participant Information here -->
+    <div class="form-group">
+      <label class="form-label" for="{{ form.email.id_for_label }}">Email</label>
+      <input class="form-input" type="email" id="{{ form.email.id_for_label }}" name="{{ form.email.html_name }}" required>
+      {% if form.email.errors %}
+        <ul class="errorlist">
+          {% for error in form.email.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ form.phone_number.id_for_label }}">Phone Number</label>
+      <input class="form-input" type="text" id="{{ form.phone_number.id_for_label }}" required name="{{ form.phone_number.html_name }}">
+      {% if form.phone_number.errors %}
+        <ul class="errorlist">
+          {% for error in form.phone_number.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ form.job_title.id_for_label }}">Job Title</label>
+      <input class="form-input" type="text" id="{{ form.job_title.id_for_label }}" name="{{ form.job_title.html_name }}">
+      {% if form.job_title.errors %}
+        <ul class="errorlist">
+          {% for error in form.job_title.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ form.passport_number.id_for_label }}">Passport Number</label>
+      <input class="form-input" type="text" id="{{ form.passport_number.id_for_label }}" name="{{ form.passport_number.html_name }}">
+      {% if form.passport_number.errors %}
+        <ul class="errorlist">
+          {% for error in form.passport_number.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ form.nationality.id_for_label }}">Nationality</label>
+      <input class="form-input" type="text" id="{{ form.nationality.id_for_label }}" name="{{ form.nationality.html_name }}">
+      {% if form.nationality.errors %}
+        <ul class="errorlist">
+          {% for error in form.nationality.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h2>Company Information</h2>
+    <div class="form-group">
+      <label class="form-label" for="{{ form.company_name.id_for_label }}">Company Name</label>
+      <input class="form-input" type="text" id="{{ form.company_name.id_for_label }}" name="{{ form.company_name.html_name }}">
+      {% if form.company_name.errors %}
+        <ul class="errorlist">
+          {% for error in form.company_name.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <!-- Add other fields for Company Information here -->
+    <div class="form-group">
+      <label class="form-label" for="{{ form.company_country.id_for_label }}">Company Country</label>
+      <input class="form-input" type="text" id="{{ form.company_country.id_for_label }}" name="{{ form.company_country.html_name }}">
+      {% if form.company_country.errors %}
+        <ul class="errorlist">
+          {% for error in form.company_country.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ form.company_city.id_for_label }}">Company City</label>
+      <input class="form-input" type="text" id="{{ form.company_city.id_for_label }}" name="{{ form.company_city.html_name }}">
+      {% if form.company_city.errors %}
+        <ul class="errorlist">
+          {% for error in form.company_city.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ form.company_address.id_for_label }}">Company Address</label>
+      <input class="form-input" type="text" id="{{ form.company_address.id_for_label }}" name="{{ form.company_address.html_name }}">
+      {% if form.company_address.errors %}
+        <ul class="errorlist">
+          {% for error in form.company_address.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h2>Declaration</h2>
+    <div class="form-group">
+      <label class="form-checkbox-label">
+        <input class="form-checkbox" type="checkbox" id="{{ form.declaration.id_for_label }}" name="{{ form.declaration.html_name }}" {% if form.declaration.value %}checked{% endif %}>
+        I hereby acknowledge that I have carefully read and agree to the terms and conditions outlined by Skilllinx Training and Development. I understand that Skilllinx Training and Development shall not be held responsible for any damage, loss, or incorrect information submitted through this registration form. I take full responsibility for the accuracy and validity of the information provided.
+      </label>
+      {% if form.declaration.errors %}
+        <ul class="errorlist">
+          {% for error in form.declaration.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  <button type="submit" class="form-submit">Submit</button>
+</form>
+<!-- Include Parsley.js library from CDN -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js" integrity="sha512-..." crossorigin="anonymous"></script>
+<script>
+// Initialize Parsley.js on the form
+const form = $('form').parsley();
+
+// Custom error message handling for Django errors
+form.on('form:success', function () {
+  const errorsContainer = $('.errorlist');
+  errorsContainer.empty();
+  if (form.validationResult !== true) {
+    form.validationResult.forEach(function (validationError) {
+      const fieldName = validationError.$element.attr('name');
+      const fieldErrors = validationError.$element.attr('data-parsley-errors-container');
+      $(fieldErrors).empty();
+      validationError.errors.forEach(function (error) {
+        if (fieldName !== 'declaration') {
+          errorsContainer.append('<p>' + error + '</p>');
+        } else {
+          $(fieldErrors).append('<p>' + error + '</p>');
+        }
+      });
+    });
+  }
+});
+
+// Submit handler to prevent form submission if there are errors
+$('form').on('submit', function (e) {
+  if (form.validationResult !== true) {
+    e.preventDefault();
+  }
+});
+</script>
+</div>
+{% include 'footer.html' %}
+{% endblock %}
+
+
+</body>
+</html>

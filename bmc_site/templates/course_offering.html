@@ -34,15 +34,15 @@ Main Banner START -->
 						<!-- Content -->
 						<div class="col-md-6 px-md-5">
 							<!-- Title -->
-							<h1 class="mb-3">Business Strategy Essentials in <font color="#F95A37">London</font></h1>
-                            <p class="mb-3">BMC Training provides on <b> Business Strategy Essentials </b> course [Management and Leadership] on <b> 2 Jul 2023</b> in London,UK.</p>
+							<h1 class="mb-3">{{courses.course.course_name}} in <font color="#F95A37">{{ courses.city }}</font></h1>
+                            <p class="mb-3">Skilllinx Training provides on <b> {{courses.course.course_name}} </b> course [{{courses.course.category}}] on <b> {{courses.start_date}}</b> in {{courses.city}}.</p>
 							<!-- Search -->
 
 						</div>
 
 						<!-- Image -->
 						<div class="col-md-6 text-center">
-							<img src="assets/bmc-training-courses.png" alt="">
+							<img src="assets/Skilllinx-training-courses.png" alt="">
 						</div>
 					</div> <!-- Row END -->
 				</div>
@@ -125,7 +125,7 @@ Main Banner END -->
 								<!-- FAQ item -->
 								<div class="mt-4">
 									<h6>What are the T&amp;C for this course?</h6>
-									<p class="mb-0" style="text-align: justify; text-justify: inter-word;">Please visit our <a href="https://www.bmc.net/terms"> Terms and Conditions</a> page</p>
+									<p class="mb-0" style="text-align: justify; text-justify: inter-word;">Please visit our <a href="https://www.Skilllinx.net/terms"> Terms and Conditions</a> page</p>
 									</div>
 
 								<!-- FAQ item -->
@@ -166,23 +166,23 @@ Main Banner END -->
 								<ul class="list-group list-group-borderless border-0">
 									<li class="list-group-item px-0 d-flex justify-content-between">
 										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-book-open text-primary"></i>Code</span>
-										<span class="text-dark">MNG101</span>
+										<span class="text-dark">{{ courses.course.course_code }}</span>
 									</li>
 									<li class="list-group-item px-0 d-flex justify-content-between">
 										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-city text-primary"></i>City</span>
-										<span class="text-dark">London</span>
+										<span class="text-dark">{{ courses.city }}</span>
 									</li>
 										<li class="list-group-item px-0 d-flex justify-content-between">
 										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-map-marker text-primary"></i>Location</span>
-										<span class="text-dark ">Paddington</span>
+										<span class="text-dark ">{{ courses.location }}</span>
 									</li>
 									<li class="list-group-item px-0 d-flex justify-content-between">
 										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa fa-calendar text-primary"></i>Start Date</span>
-										<span class="text-dark">2  Jul  2023</span>
+										<span class="text-dark">{{ courses.start_date }}</span>
 									</li>
                                     <li class="list-group-item px-0 d-flex justify-content-between">
 										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-flag-checkered text-primary"></i>End Date</span>
-										<span class="text-dark"> 6  Jul  2023</span>
+										<span class="text-dark"> {{ courses.end_date }}</span>
 									</li>
 
 
@@ -192,17 +192,17 @@ Main Banner END -->
 									</li>
 									<li class="list-group-item px-0 d-flex justify-content-between">
 										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-globe text-primary"></i>Language</span>
-										<span class="text-dark">English</span>
+										<span class="text-dark">{{ courses.language }}</span>
 									</li>
 
 									<li class="list-group-item px-0 d-flex justify-content-between">
 										<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-medal text-primary"></i>Certificate</span>
-										<span class="text-dark">Yes</span>
+										<span class="text-dark">{{ courses.certificate }}</span>
 									</li>
 
                                     <li class="list-group-item px-0 d-flex justify-content-between">
 										<span class="h6 fw-light mb-0"><i class="bi bi-currency-pound text-primary"></i>Fees</span>
-										<span class="text-dark">4700 GBP   </span>
+										<span class="text-dark">{{ courses.fees }}</span>
 									</li>
 
 										<li class="list-group-item px-0 d-flex justify-content-between">
@@ -216,11 +216,11 @@ Main Banner END -->
 
 
 
-                                <a href="https://www.bmc.uk.com/requests/register.php?id=25&amp;code=MNG101&amp;course=Business-Strategy-Essentials&amp;city=London" rel="nofollow" target="_blank" class="btn btn-info">Registration Request</a>
+                                <a href="{% url 'register' courses.course.category.slug courses.id courses.course.slug %}" rel="nofollow" target="_blank" class="btn btn-info">Registration Request</a>
 
 
-									<a href="bmc-sec-data/training-outlines/cover-downloading.php?id=25&amp;code=MNG101&amp;city=London" class="btn btn-warning">PDF File</a>
-                                    <a href="https://www.bmc.net/Business-Strategy-Essentials" class="btn btn-danger">Other Dates</a>
+									<a href="Skilllinx-sec-data/training-outlines/cover-downloading.php?id=25&amp;code=MNG101&amp;city=London" class="btn btn-warning">PDF File</a>
+                                    <a href="https://www.Skilllinx.net/Business-Strategy-Essentials" class="btn btn-danger">Other Dates</a>
 								</div>
 								<!-- Divider -->
 

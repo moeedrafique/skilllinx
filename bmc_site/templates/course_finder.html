@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Eduport - LMS, Education and Course Theme</title>
+    <title>Eduport - LMS, Education and Course Theme</title>
 
 </head>
 
@@ -13,374 +13,30 @@
 {% block content %}
 {% include 'header.html' %}
 
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <!-- =======================Main Banner START -->
 <section class="py-0">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="bg-light p-4 text-center rounded-3">
-					<h1 class="m-0" style="color:#00008B;">Courses Finder</h1>
-					<!-- Breadcrumb -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-light p-4 text-center rounded-3">
+                    <h1 class="m-0" style="color:#00008B;">Courses Finder</h1>
+                    <!-- Breadcrumb -->
 
 
-				</div>
-			</div>
-		</div>
-	</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- =======================-->
-
+<script src="{% static 'assets\vendor\data-table\extensions\buttons\js\extension-btns-custom.js' %}"></script>
 <!--=======================-->
 <section class="pb-0 pt-0 ">
     <div class="container">
 
         <!-- Filter bar START -->
-        <form method="get" action="{% url 'results' %}" class="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative">
-            <div class="row g-3">
-
-
-                <!-- Input -->
-                <div class="col-xl-12">
-                    <input class="form-control me-1" name="find" type="search"
-                           placeholder="Serach by course title or course code">
-                </div>
-
-                <!-- Select item -->
-                <div class="col-xl-12">
-                    <div class="row g-3">
-
-
-                        <!-- Select items -->
-                        <div class="col-sm-6 col-xl-2 col-md-3 pb-2 pb-md-0">
-                            {% render_field myFilter.form.category class="form-control select2 " id="exampleFormControlSelect1" %}
-
-                        </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-       <script>
-                    $('.select2').select2();
-                </script>
-                        <!-- Select items -->
-                        <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
-                            <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                 aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                <div class="choices__inner"><select
-                                        class="form-select form-select-sm js-choice choices__input"
-                                        aria-label=".form-select-sm example" name="city" hidden="" tabindex="-1"
-                                        data-choice="active">
-                                    <option value="" data-custom-properties="[object Object]">All Cities</option>
-                                </select>
-                                    <div class="choices__list choices__list--single">
-                                        <div class="choices__item choices__placeholder choices__item--selectable"
-                                             data-item="" data-id="1" data-value=""
-                                             data-custom-properties="[object Object]" aria-selected="true">All Cities
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="choices__list choices__list--dropdown" aria-expanded="false"><input
-                                        type="search" class="choices__input choices__input--cloned" autocomplete="off"
-                                        autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list"
-                                        aria-label="All Cities" placeholder="">
-                                    <div class="choices__list" role="listbox">
-                                        <div id="choices--city-jw-item-choice-1"
-                                             class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                             role="option" data-choice="" data-id="1" data-value=""
-                                             data-select-text="Press to select" data-choice-selectable=""
-                                             aria-selected="true">All Cities
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-2"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="2" data-value="1"
-                                             data-select-text="Press to select" data-choice-selectable="">London
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-3"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="3" data-value="2"
-                                             data-select-text="Press to select" data-choice-selectable="">Dubai
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-4"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="4" data-value="3"
-                                             data-select-text="Press to select" data-choice-selectable="">Kuala Lumpur
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-5"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="5" data-value="4"
-                                             data-select-text="Press to select" data-choice-selectable="">Istanbul
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-6"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="6" data-value="5"
-                                             data-select-text="Press to select" data-choice-selectable="">Paris
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-7"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="7" data-value="6"
-                                             data-select-text="Press to select" data-choice-selectable="">Bali
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-8"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="8" data-value="8"
-                                             data-select-text="Press to select" data-choice-selectable="">Rome
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-9"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="9" data-value="9"
-                                             data-select-text="Press to select" data-choice-selectable="">Madrid
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-10"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="10" data-value="10"
-                                             data-select-text="Press to select" data-choice-selectable="">Munich
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-11"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="11" data-value="11"
-                                             data-select-text="Press to select" data-choice-selectable="">Barcelona
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-12"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="12" data-value="12"
-                                             data-select-text="Press to select" data-choice-selectable="">Singapore
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-13"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="13" data-value="13"
-                                             data-select-text="Press to select" data-choice-selectable="">Berlin
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-14"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="14" data-value="14"
-                                             data-select-text="Press to select" data-choice-selectable="">Hong Kong
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-15"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="15" data-value="15"
-                                             data-select-text="Press to select" data-choice-selectable="">Zurich
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-16"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="16" data-value="16"
-                                             data-select-text="Press to select" data-choice-selectable="">Washington
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-17"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="17" data-value="17"
-                                             data-select-text="Press to select" data-choice-selectable="">New York
-                                        </div>
-                                        <div id="choices--city-jw-item-choice-18"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="18" data-value="21"
-                                             data-select-text="Press to select" data-choice-selectable="">Amsterdam
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Search item -->
-                        <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
-                            <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                 aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                <div class="choices__inner"><select
-                                        class="form-select form-select-sm js-choice choices__input"
-                                        aria-label=".form-select-sm example" name="month" hidden="" tabindex="-1"
-                                        data-choice="active">
-                                    <option value="" data-custom-properties="[object Object]">All Months</option>
-                                </select>
-                                    <div class="choices__list choices__list--single">
-                                        <div class="choices__item choices__placeholder choices__item--selectable"
-                                             data-item="" data-id="1" data-value=""
-                                             data-custom-properties="[object Object]" aria-selected="true">All Months
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="choices__list choices__list--dropdown" aria-expanded="false"><input
-                                        type="search" class="choices__input choices__input--cloned" autocomplete="off"
-                                        autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list"
-                                        aria-label="All Months" placeholder="">
-                                    <div class="choices__list" role="listbox">
-                                        <div id="choices--month-kw-item-choice-1"
-                                             class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                             role="option" data-choice="" data-id="1" data-value=""
-                                             data-select-text="Press to select" data-choice-selectable=""
-                                             aria-selected="true">All Months
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-2"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="2" data-value="Jan"
-                                             data-select-text="Press to select" data-choice-selectable="">January
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-3"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="3" data-value="Feb"
-                                             data-select-text="Press to select" data-choice-selectable="">February
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-4"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="4" data-value="Mar"
-                                             data-select-text="Press to select" data-choice-selectable="">March
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-5"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="5" data-value="Apr"
-                                             data-select-text="Press to select" data-choice-selectable="">April
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-6"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="6" data-value="May"
-                                             data-select-text="Press to select" data-choice-selectable="">May
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-7"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="7" data-value="Jun"
-                                             data-select-text="Press to select" data-choice-selectable="">June
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-8"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="8" data-value="Jul"
-                                             data-select-text="Press to select" data-choice-selectable="">July
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-9"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="9" data-value="Aug"
-                                             data-select-text="Press to select" data-choice-selectable="">August
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-10"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="10" data-value="Sep"
-                                             data-select-text="Press to select" data-choice-selectable="">September
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-11"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="11" data-value="Oct"
-                                             data-select-text="Press to select" data-choice-selectable="">October
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-12"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="12" data-value="Nov"
-                                             data-select-text="Press to select" data-choice-selectable="">November
-                                        </div>
-                                        <div id="choices--month-kw-item-choice-13"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="13" data-value="Dec"
-                                             data-select-text="Press to select" data-choice-selectable="">December
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Search item -->
-                        <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
-                            <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                 aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                <div class="choices__inner"><select
-                                        class="form-select form-select-sm js-choice choices__input"
-                                        aria-label=".form-select-sm example" name="type" hidden="" tabindex="-1"
-                                        data-choice="active">
-                                    <option value="" data-custom-properties="[object Object]">All Durations</option>
-                                </select>
-                                    <div class="choices__list choices__list--single">
-                                        <div class="choices__item choices__placeholder choices__item--selectable"
-                                             data-item="" data-id="1" data-value=""
-                                             data-custom-properties="[object Object]" aria-selected="true">All Durations
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="choices__list choices__list--dropdown" aria-expanded="false"><input
-                                        type="search" class="choices__input choices__input--cloned" autocomplete="off"
-                                        autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list"
-                                        aria-label="All Durations" placeholder="">
-                                    <div class="choices__list" role="listbox">
-                                        <div id="choices--type-up-item-choice-1"
-                                             class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                             role="option" data-choice="" data-id="1" data-value=""
-                                             data-select-text="Press to select" data-choice-selectable=""
-                                             aria-selected="true">All Durations
-                                        </div>
-                                        <div id="choices--type-up-item-choice-2"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="2" data-value="One Week"
-                                             data-select-text="Press to select" data-choice-selectable="">One Week
-                                        </div>
-                                        <div id="choices--type-up-item-choice-3"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="3" data-value="Two Weeks"
-                                             data-select-text="Press to select" data-choice-selectable="">Two Weeks
-                                        </div>
-                                        <div id="choices--type-up-item-choice-4"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="4" data-value="Three Weeks"
-                                             data-select-text="Press to select" data-choice-selectable="">Three Weeks
-                                        </div>
-                                        <div id="choices--type-up-item-choice-5"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="5" data-value="Four Weeks"
-                                             data-select-text="Press to select" data-choice-selectable="">Four Weeks
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Search item -->
-                        <div class="col-sm-6 col-xl-2  col-md-3 pb-2 pb-md-0">
-                            <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                 aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                <div class="choices__inner"><select name="year"
-                                                                    class="form-select form-select-sm js-choice choices__input"
-                                                                    aria-label=".form-select-sm example" hidden=""
-                                                                    tabindex="-1" data-choice="active">
-                                    <option value="" data-custom-properties="[object Object]">All Years</option>
-                                </select>
-                                    <div class="choices__list choices__list--single">
-                                        <div class="choices__item choices__placeholder choices__item--selectable"
-                                             data-item="" data-id="1" data-value=""
-                                             data-custom-properties="[object Object]" aria-selected="true">All Years
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="choices__list choices__list--dropdown" aria-expanded="false"><input
-                                        type="search" class="choices__input choices__input--cloned" autocomplete="off"
-                                        autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list"
-                                        aria-label="All Years" placeholder="">
-                                    <div class="choices__list" role="listbox">
-                                        <div id="choices--year-58-item-choice-1"
-                                             class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                             role="option" data-choice="" data-id="1" data-value=""
-                                             data-select-text="Press to select" data-choice-selectable=""
-                                             aria-selected="true">All Years
-                                        </div>
-                                        <div id="choices--year-58-item-choice-2"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="2" data-value="2023"
-                                             data-select-text="Press to select" data-choice-selectable="">2023
-                                        </div>
-                                        <div id="choices--year-58-item-choice-3"
-                                             class="choices__item choices__item--choice choices__item--selectable"
-                                             role="option" data-choice="" data-id="3" data-value="2024"
-                                             data-select-text="Press to select" data-choice-selectable="">2024
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-sm-6 col-xl-2 col-md-3 pb-2 pb-md-0">
-                            <button type="submit" class="btn btn-primary mb-0 rounded z-index-1 w-100"><i
-                                    class="fas fa-search"></i></button>
-                        </div>
-
-
-                    </div> <!-- Row END -->
-                </div>
-                <!-- Button -->
-
-
-            </div> <!-- Row END -->
-        </form>
+        {% include 'filter.html' %}
         <!-- Filter bar END -->
     </div>
 
@@ -388,40 +44,34 @@
 <!--======================-->
 
 <section class="pt-0">
-	<div class="container" data-sticky-container="">
+    <div class="container" data-sticky-container="">
 
 
+        <div class="row g-4">
+            <!-- Main content START -->
+            <div class="col-xl-12">
+
+                <div class="row g-4">
+                    <!-- Title START -->
 
 
-
-		<div class="row g-4">
-			<!-- Main content START -->
-			<div class="col-xl-12">
-
-				<div class="row g-4">
-					<!-- Title START -->
+                    <!-- About course START -->
+                    <div class="col-12">
+                        <div class="card border">
 
 
+                            <!-- Card header START -->
+                            <div class="card-header border-bottom">
+                                <h3 class="mb-0">Search Results</h3>
+                            </div>
+                            <!-- Card header END -->
 
 
-					<!-- About course START -->
-					<div class="col-12">
-						<div class="card border">
+                            <!-- Card body START -->
+                            <div class="card-body">
 
 
-							<!-- Card header START -->
-							<div class="card-header border-bottom">
-								<h3 class="mb-0">Search Results</h3>
-							</div>
-							<!-- Card header END -->
-
-
-
-							<!-- Card body START -->
-							<div class="card-body">
-
-
-<script>
+                                <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
@@ -430,31 +80,51 @@ $(document).ready(function(){
     });
   });
 });
-</script>
+
+                                </script>
 
 
 
 
+                            </div>
+                                <table id="xcustomers"
+                                       style="width:100%; word-wrap: break-word !important;  table-layout: fixed;"
+                                       class="dataTable no-footer">
+                                    <thead>
+                                    <tr class="table-warning table-bordered border-secondary ">
+                                        <th class="sorting" tabindex="0" aria-controls="xcustomers" rowspan="1"
+                                            colspan="1"
+                                            aria-label="Course title &amp;amp; Code: activate to sort column ascending"
+                                            style="width: 299px;">Course title &amp; Code
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="xcustomers" rowspan="1"
+                                            colspan="1" aria-label="City: activate to sort column ascending"
+                                            style="width: 299px;">City
+                                        </th>
+                                        <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Start Date"
+                                            style="width: 299px;">Start Date
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="xcustomers" rowspan="1"
+                                            colspan="1" aria-label="Duration: activate to sort column ascending"
+                                            style="width: 299px;">Duration
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
 
+                                    {% for i in users %}
+                                    <tr>
+                                                                    <td>
+                                                                        <a style=" color: black;" target="_blank" href="{% url 'course_offer' i.course.category.slug i.id i.course.slug %}">{{ i.course.course_name }} - {{ i.course.course_code }}</a></td>
+                                                                    <td>{{ i.city }}</td>
+                                                                    <td>{{ i.start_date }}</td>
+                                                                    <td>{{ i.course.duration }}</td>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <style>
+                                                            </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <style>
 
 
 
@@ -487,143 +157,30 @@ $(document).ready(function(){
 }
 
 
-</style>
+
+                                </style>
+                                <script>
+$(document).ready( function () {
+    $('#xcustomers').DataTable();
+} );
+                            </script>
+
+                        </div>
 
 
-
-<strong>Page 1 of 0</strong>
-</div>
-                    <div id="xcustomers_wrapper" class="dataTables_wrapper no-footer"><div class="dt-buttons"><button class="dt-button buttons-pdf buttons-html5" tabindex="0" aria-controls="xcustomers" type="button"><span>Download This page as PDF</span></button> </div><table id="xcustomers" style="width:100%; word-wrap: break-word !important;  table-layout: fixed;" class="dataTable no-footer">
-        <thead>
-            <tr class="table-warning table-bordered border-secondary "><th class="sorting" tabindex="0" aria-controls="xcustomers" rowspan="1" colspan="1" aria-label="Course title &amp;amp; Code: activate to sort column ascending" style="width: 299px;">Course title &amp; Code</th><th class="sorting" tabindex="0" aria-controls="xcustomers" rowspan="1" colspan="1" aria-label="City: activate to sort column ascending" style="width: 299px;">City</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Start Date" style="width: 299px;">Start Date</th><th class="sorting" tabindex="0" aria-controls="xcustomers" rowspan="1" colspan="1" aria-label="Duration: activate to sort column ascending" style="width: 299px;">Duration</th></tr>
-        </thead>
-        <tbody>
+                        <!-- Card body START -->
+                    </div>
+                </div>
+                <!-- About course END -->
 
 
-
-
-
-
-
-
-
-        <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">No data available in table</td></tr></tbody>
-           </table></div>
-
-
- <table style="table-layout: fixed; width: 100%;   "><tbody><tr><td style="width: 100%;">
-<ul class=" pagination justify-content-center p-3 flex-wrap ">
-
-	<li class="page-item disabled">
-	<a class="page-link">Previous</a>
-	</li>
-
-
-	<li class="page-item disabled">
-	<a class="page-link">Next</a>
-	</li>
-    </ul>
-
-  </td></tr></tbody></table>
-
-
-
-
-    <script> dTable=$('#xcustomers').DataTable( {
-          "pageLength": 30,
-          "bLengthChange": false,
-          "paging":   false,
-          "info":     false,
-          "dom": "Blpirtip",
-            "aaSorting": [],
-      "columnDefs": [
-{ "orderable": false, "targets": [2] }
-],
-
-            buttons: [
-    {
-        text: 'Download This page as PDF',
-        extend: 'pdfHtml5',
-    message: 'Here are the results that you have searched for at www.bmc.net',
-    title: 'BMC Training Results',
-    orientation: 'portrait',
-    exportOptions: {
-         columns: ':visible'
-    },
-    customize: function (doc) {
-        doc.pageMargins = [10,10,10,10];
-        doc.defaultStyle.fontSize = 8;
-        doc.styles.tableHeader.fontSize = 7;
-        doc.styles.title.fontSize = 12;
-        // Remove spaces around page title
-        doc.content[0].text = doc.content[0].text.trim();
-        // Create a footer
-        doc['footer']=(function(page, pages) {
-            return {
-                columns: [
-                    'BMC Training and Development-www.bmc.net',
-                    {
-                        // This is the right column
-                        alignment: 'right',
-                        text: ['page ', { text: page.toString() },  ' of ', { text: pages.toString() }]
-                    }
-                ],
-                margin: [10, 0]
-            }
-        });
-        // Styling the table: create style object
-        var objLayout = {};
-        // Horizontal line thickness
-        objLayout['hLineWidth'] = function(i) { return .5; };
-        // Vertikal line thickness
-        objLayout['vLineWidth'] = function(i) { return .5; };
-        // Horizontal line color
-        objLayout['hLineColor'] = function(i) { return '#aaa'; };
-        // Vertical line color
-        objLayout['vLineColor'] = function(i) { return '#aaa'; };
-        // Left padding of the cell
-        objLayout['paddingLeft'] = function(i) { return 4; };
-        // Right padding of the cell
-        objLayout['paddingRight'] = function(i) { return 4; };
-        // Inject the object in the document
-        doc.content[1].layout = objLayout;
-    }
-    }
-            ]
-
-
-
-
-          } );
-
-
-
- $('#basic-url').keyup(function() {
-  dTable.search($(this).val()).draw(); // this  is for customized searchbox with datatable search feature.
-    })
-
-    </script>
-
-							</div>
-
-
-							<!-- Card body START -->
-						</div>
-					</div>
-					<!-- About course END -->
-
-
-
-
-
-
-</div></div></div>
+            </div>
+        </div>
+    </div>
 </section>
 
 {% include 'footer.html' %}
 {% endblock %}
-
-
 
 
 </body>

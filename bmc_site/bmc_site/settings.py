@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_^p6jr83-!^feax-m_w07nf_dxtp-lyd715^y_tfnd+f6oa7p*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://skilllinx.co.uk/', 'skilllinx.co.uk', '44.208.24.42']
 
 
 # Application definition
@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django_filters',
     'ckeditor',
     'widget_tweaks',
+    'django_countries',
+    'cookie_consent',
+    'des',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'website.context_processors.advertise',
             ],
         },
     },
@@ -73,6 +77,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bmc_site.wsgi.application'
 
+
+EMAIL_BACKEND = 'des.backends.ConfiguredEmailBackend'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -163,3 +169,24 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+COOKIE_CONSENT_NAME = 'cookie_consent'
+COOKIE_CONSENT_REQUIRED = True
+COOKIE_CONSENT_EXPIRY = 365
+COOKIE_CONSENT_PATH = '/'
+COOKIE_CONSENT_DOMAIN = None
+COOKIE_CONSENT_SECURE = False
+COOKIE_CONSENT_HTTPONLY = False
+COOKIE_CONSENT_SAMESITE = 'Lax'
+COOKIE_CONSENT_TEMPLATE = 'consent.html'
+
+
+#DEPLOYMENT SETTING
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_REFERRER_POLICY = "strict-origin"

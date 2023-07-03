@@ -22,6 +22,9 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/tiny-slider/tiny-slider.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/glightbox/css/glightbox.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/choices/css/choices.min.css' %}">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 
 	    <!-- Data Table Css -->
     <link rel="stylesheet" type="text/css" href="{% static 'assets\vendor\datatables.net-bs4\css\dataTables.bootstrap4.min.css' %}">
@@ -48,7 +51,7 @@
 
 <!-- Back to top -->
 <div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
 
 <!-- Bootstrap JS -->
 <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
@@ -70,7 +73,34 @@
 <script src="{% static 'assets\vendor\datatables.net-bs4\js\dataTables.bootstrap4.min.js' %}"></script>
 <script src="{% static 'assets\vendor\datatables.net-responsive\js\dataTables.responsive.min.js' %}"></script>
 <script src="{% static 'assets\vendor\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js' %}"></script>
+<script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (e) => {
+    const requiredFields = form.querySelectorAll('.form-input[required]');
+    let hasError = false;
 
+    requiredFields.forEach((field) => {
+      if (!field.value.trim()) {
+        field.classList.add('form-error');
+        hasError = true;
+      } else {
+        field.classList.remove('form-error');
+      }
+    });
+
+    const declarationCheckbox = form.querySelector('.form-checkbox');
+    if (!declarationCheckbox.checked) {
+      declarationCheckbox.classList.add('form-error');
+      hasError = true;
+    } else {
+      declarationCheckbox.classList.remove('form-error');
+    }
+
+    if (hasError) {
+      e.preventDefault();
+    }
+  });
+</script>
 <!-- Template Functions -->
 <script src="{% static 'assets/js/functions.js' %}"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">

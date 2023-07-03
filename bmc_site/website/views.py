@@ -10,19 +10,17 @@ from django.views.generic import ListView
 from .filters import *
 import requests
 
+from .forms import RegistrationForm
 from .models import *
 # Create your views here.
 def home(request):
     bannerimage = Banner.objects.all()
     category = Category.objects.all()
-    institutionFinders = Courses.objects.select_related('city').prefetch_related('category').filter()
-    myFilter = institutionFilter(request.GET, queryset=institutionFinders)
-    institutionFinders = myFilter.qs
-    context = {'institutionFinders': institutionFinders, 'myFilter': myFilter, "category": category, 'banner_image': bannerimage}
+    context = {"category": category, 'banner_image': bannerimage}
     return render(request, 'index.html', context)
 
 def No(request):
-    institutionFinders = Courses.objects.select_related('city').prefetch_related('category').filter()
+    institutionFinders = CourseOffering.objects.select_related('course').prefetch_related('city').filter()
     myFilter = institutionFilter(request.GET, queryset=institutionFinders)
     institutionFinders = myFilter.qs
     myFilter = institutionFilter(request.GET, queryset=institutionFinders)
@@ -44,7 +42,9 @@ def No(request):
 def categoryDetail(request, slug):
     category = Category.objects.get(slug=slug)
     courses = Courses.objects.filter(category=category)
-    context = {"category": category, 'courses':courses}
+    city = City.objects.all()[:8]
+    count = courses.count()
+    context = {"category": category, 'courses':courses, 'count':count, 'city':city}
     return render(request, 'category_detail.html', context)
 
 
@@ -62,6 +62,17 @@ def courseOffering(request,id, slug, category_slug):
     # courses = Courses.objects.filter(category=category)
     context = {'courses':courses}
     return render(request, 'course_offering.html', context)
+
+
+def city_course_offerings(request, slug):
+    city = City.objects.get(slug=slug)
+    course_offerings = CourseOffering.objects.filter(city__slug=slug)
+    return render(request, 'location.html', {'city':city, 'course_offerings': course_offerings})
+
+def category_course_offerings(request, category_slug, slug):
+    city = City.objects.get(slug=slug)
+    course_offerings = CourseOffering.objects.filter(course__category__slug=category_slug, city__slug=slug)
+    return render(request, 'location.html', {'city':city, 'course_offerings': course_offerings})
 #
 # class blogSearchView(ListView):
 #     template_name = 'course_finder.html'
@@ -87,6 +98,30 @@ def courseOffering(request,id, slug, category_slug):
 
 def Contact(request):
     return render(request, 'contact.html')
+
+def publicPrograms(request):
+    return render(request, 'public_program.html')
+
+def customizedTraining(request):
+    return render(request, 'customized_training.html')
+
+def research(request):
+    return render(request, 'research.html')
+
+def consulting(request):
+    return render(request, 'consulting.html')
+
+def inhouseTraining(request):
+    return render(request, 'inhouse_train.html')
+
+def privacyPolicy(request):
+    return render(request, 'privacy_policy.html')
+
+def terms(request):
+    return render(request, 'terms.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 def sendEmail(request):
     if request.method == 'POST':
@@ -120,3 +155,19 @@ def sendEmail(request):
             return render(request, 'email_contact_fail.html')
 
     return render(request, 'email_contact_sent.html')
+
+
+def registerForm(request,id, slug, category_slug):
+    category = Courses.objects.get(category__slug=category_slug, id=id, slug=slug)
+    courses = CourseOffering.objects.get(course=category)
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if request.method == 'POST':
+            form = RegistrationForm(request.POST)
+            if form.is_valid():
+                form.instance.course_offering = courses
+                form.save()
+    else:
+        form = RegistrationForm()
+    context = {'form':form}
+    return render(request, 'registration_form.html', context)
