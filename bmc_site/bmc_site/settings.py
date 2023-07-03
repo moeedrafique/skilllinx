@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-_^p6jr83-!^feax-m_w07nf_dxtp-lyd715^y_tfnd+f6oa7p*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://skilllinx.co.uk/', 'skilllinx.co.uk', '44.208.24.42']
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['https://skilllinx.co.uk/', 'skilllinx.co.uk', '44.208.24.42']
 
 
 # Application definition
@@ -182,11 +183,11 @@ COOKIE_CONSENT_TEMPLATE = 'consent.html'
 
 
 #DEPLOYMENT SETTING
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_REFERRER_POLICY = "strict-origin"
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_HSTS_SECONDS = 31536000
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+# SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_REFERRER_POLICY = "strict-origin"

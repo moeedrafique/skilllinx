@@ -18540,7 +18540,7 @@ textarea.form-control-lg {
     z-index: 1100 !important;
   }
   .navbar-expand-sm .navbar-brand .navbar-brand-item {
-    height: 36px;
+    height: 65px;
     display: block;
     width: auto;
   }
@@ -18620,7 +18620,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 575.98px) {
   .navbar-expand-sm .navbar-brand .navbar-brand-item {
-    height: 24px;
+    height: 45px;
   }
   .navbar-expand-sm .navbar-brand {
     padding: 20px 0;
@@ -19113,7 +19113,7 @@ textarea.form-control-lg {
     z-index: 1100 !important;
   }
   .navbar-expand-xl .navbar-brand .navbar-brand-item {
-    height: 36px;
+    height: 65px;
     display: block;
     width: auto;
   }
@@ -19675,7 +19675,7 @@ textarea.form-control-lg {
     padding: 14px 0;
   }
   header.navbar-sticky-on .navbar-brand .navbar-brand-item {
-    height: 22px;
+    height: 45px;
   }
 }
 @-webkit-keyframes fadeInDown {
